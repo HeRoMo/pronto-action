@@ -1,0 +1,32 @@
+name: 'Pronto Action'
+description: 'Github action of Pronto'
+author: 'HeRoMo'
+branding:
+  icon: 'alert-octagon'
+  color: 'blue'
+inputs:
+  github_token:
+    description: 'GITHUB_TOKEN.'
+    required: false
+    default: ${{ github.token }}
+  commit:
+    description: 'Commit for the diff.'
+    required: false
+    default: 'origin/master'
+  runners:
+    description: 'Run only the passed runners.'
+    required: false
+    default: 'rubocop'
+  formatters:
+    description: 'Pick output formatters.'
+    required: false
+    default: 'github_pr_review'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - run
+    - -f
+    - github_pr_review
+    - -c
+    - origin/master

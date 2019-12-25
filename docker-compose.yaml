@@ -1,0 +1,15 @@
+version: '3'
+services:
+  pronto:
+    build: .
+    dockerfile: Dockerfile.base
+    image: pronto-action.dev
+    volumes:
+      - .:/pronto
+      - bundle_install:/usr/local/bundle
+      - bundle:/app/.bundle
+volumes:
+  bundle_install:
+    driver: local
+  bundle:
+    driver: local
