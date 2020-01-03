@@ -1,0 +1,13 @@
+name: Pronto
+on:
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  github-labeler:
+    name: pronto
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        uses: HeRoMo/pronto-action@develop
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
