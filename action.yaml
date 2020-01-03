@@ -24,9 +24,3 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - run
-    - -f
-    - github_pr_review
-    - -c
-    - origin/master
