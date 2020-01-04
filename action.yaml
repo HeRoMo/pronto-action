@@ -15,7 +15,7 @@ inputs:
     default: 'origin/master'
   runners:
     description: 'Run only the passed runners.'
-    required: false
+    required: true
     default: 'rubocop'
   formatters:
     description: 'Pick output formatters.'
