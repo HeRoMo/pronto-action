@@ -9,6 +9,7 @@ RUN set -eux; \
     apk add --update --no-cache --virtual .ruby-builddeps \
         alpine-sdk \
         cmake \
+        jq \
         openssl \
         openssl-dev \
     ; \
