@@ -11,3 +11,4 @@ jobs:
       - uses: HeRoMo/pronto-action@develop
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          runners: 'rubocop'
