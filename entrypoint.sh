@@ -6,7 +6,7 @@ cd ${GITHUB_WORKSPACE}
 export GITHUB_TOKEN=${INPUT_GITHUB_TOKEN}
 export COMMIT=${INPUT_COMMIT:-origin/master}
 export RUNNER=${INPUT_RUNNER:-rubocop}
-export FORMATTERS=${INPUT_FORMATTERS:-github_status github_pr_review}
+export FORMATTERS=${INPUT_FORMATTERS:-github_status github_pr}
 
 export PRONTO_PULL_REQUEST_ID="$(jq --raw-output .number "${GITHUB_EVENT_PATH}")"
 export PRONTO_GITHUB_ACCESS_TOKEN="${GITHUB_TOKEN}"
