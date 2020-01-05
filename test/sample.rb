@@ -1,4 +1,4 @@
-class sample
+class Sample
 
   def hello
     puts 'hello'
