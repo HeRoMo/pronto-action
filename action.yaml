@@ -20,7 +20,7 @@ inputs:
   formatters:
     description: 'Pick output formatters.'
     required: false
-    default: 'github_status github_pr_review'
+    default: 'github_status github_pr'
 runs:
   using: 'docker'
   image: 'Dockerfile'
