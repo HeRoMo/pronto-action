@@ -11,8 +11,6 @@ export COMMIT=${INPUT_COMMIT:-origin/master}
 export PRONTO_PULL_REQUEST_ID="$(jq --raw-output .number "${GITHUB_EVENT_PATH}")"
 export PRONTO_GITHUB_ACCESS_TOKEN="${GITHUB_TOKEN}"
 COMMAND="bundle exec pronto run -r ${RUNNERS} -f ${FORMATTERS} -c ${COMMIT}"
-env
 echo "PRONTO_PULL_REQUEST_ID: ${PRONTO_PULL_REQUEST_ID}"
-echo "${COMMAND}"
+echo "COMMAND: ${COMMAND}"
 $COMMAND
-exit $?
