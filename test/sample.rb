@@ -9,5 +9,20 @@ class Sample
 
   def hoge
     puts 'hoge'
+    puts 'hoge'
+    puts 'hoge'
+    puts 'hoge'
+    puts 'hoge'
+    puts 'hoge'
+    puts 'hoge'
+    puts 'hoge'
+    puts 'hoge'
+    puts 'hoge'
+    puts 'hoge'
+    puts 'hoge'
+    puts 'hoge'
+    puts 'hoge'
+    puts 'hoge'
+    puts 'hoge'
   end
 end
