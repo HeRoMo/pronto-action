@@ -3,37 +3,11 @@
 class Sample
   def hello
     puts 'hello'
-    puts 'hello'
-    puts 'hello'
-    puts 'hello'
-    puts 'hello'
-    puts 'hello'
-    puts 'hello'
-    puts 'hello'
-    puts 'hello'
-    puts 'hello'
-    puts 'hello'
-    puts 'hello'
-    puts 'hello'
-    puts 'hello'
   end
 
   private
 
   def hoge
-    puts 'hoge'
-    puts 'hoge'
-    puts 'hoge'
-    puts 'hoge'
-    puts 'hoge'
-    puts 'hoge'
-    puts 'hoge'
-    puts 'hoge'
-    puts 'hoge'
-    puts 'hoge'
-    puts 'hoge'
-    puts 'hoge'
-    puts 'hoge'
     puts 'hoge'
   end
 end
