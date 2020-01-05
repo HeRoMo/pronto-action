@@ -1,5 +1,5 @@
-FROM hero/pronto-action:v1.0.0
+FROM hero/pronto-action:v0.1.0
 
 COPY entrypoint.sh entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/pronto/entrypoint.sh"]
