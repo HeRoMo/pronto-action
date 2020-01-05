@@ -13,7 +13,7 @@ inputs:
     description: 'Commit for the diff.'
     required: false
     default: 'origin/master'
-  runners:
+  runner:
     description: 'Run only the passed runners.'
     required: false
     default: 'rubocop'
