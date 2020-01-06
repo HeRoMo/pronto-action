@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: HeRoMo/pronto-action@develop
+      - uses: HeRoMo/pronto-action@v0.2.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```

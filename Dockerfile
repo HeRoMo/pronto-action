@@ -1,4 +1,4 @@
-FROM hero/pronto-action:v0.1.0
+FROM hero/pronto-action:v0.2.0
 
 COPY entrypoint.sh entrypoint.sh
 
