@@ -2,7 +2,7 @@ name: 'Pronto Action'
 description: 'Github action of Pronto'
 author: 'HeRoMo'
 branding:
-  icon: 'alert-octagon'
+  icon: 'code'
   color: 'blue'
 inputs:
   github_token:
