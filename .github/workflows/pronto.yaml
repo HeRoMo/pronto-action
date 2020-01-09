@@ -10,3 +10,7 @@ jobs:
       - uses: HeRoMo/pronto-action@v0.2.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: cat ${{GITHUB_EVENT_PATH}}
