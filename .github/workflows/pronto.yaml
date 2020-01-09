@@ -13,4 +13,5 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: jq .number $GITHUB_EVENT_PATH
+      - run: cat $GITHUB_EVENT_PATH
+      - run: jq -r .pull_request.labels $GITHUB_EVENT_PATH
