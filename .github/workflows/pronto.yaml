@@ -14,4 +14,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: cat $GITHUB_EVENT_PATH
-      - run: jq -r '.pull_request.labels[].name' $GITHUB_EVENT_PATH
+      - run: jq -r '.pull_request.labels[].name|contains("enhancement")' $GITHUB_EVENT_PATH
