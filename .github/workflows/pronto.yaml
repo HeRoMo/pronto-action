@@ -5,14 +5,9 @@ on:
 jobs:
   pronto:
     runs-on: ubuntu-latest
-    if: contains(join(github.event.pull_request.labels.*.name), 'enhancement')
+    if: !contains(join(github.event.pull_request.labels.*.name), 'enhancement')
     steps:
       - uses: actions/checkout@v1
       - uses: HeRoMo/pronto-action@v0.2.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - run: cat $GITHUB_EVENT_PATH
-      - run: $(jq '[.pull_request.labels[].name]|contains(["enhancement"])' $GITHUB_EVENT_PATH)
