@@ -5,7 +5,7 @@ on:
 jobs:
   pronto:
     runs-on: ubuntu-latest
-    if: ${{$(jq -r '[.pull_request.labels[].name]|contains(["enhancement"])' $GITHUB_EVENT_PATH)}}
+    if: github.event.pull_request.labels*.name
     steps:
       - uses: actions/checkout@v1
       - uses: HeRoMo/pronto-action@v0.2.0
