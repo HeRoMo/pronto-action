@@ -13,4 +13,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
   event:
     runs-on: ubuntu-latest
-    run: cat $GITHUB_EVENT_PATH
+    steps:
+      run: cat $GITHUB_EVENT_PATH
