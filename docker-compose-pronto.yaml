@@ -1,0 +1,12 @@
+version: '3'
+services:
+  pronto:
+    image: hero/pronto-action:develop
+    volumes:
+      - .:/pronto
+    command: pronto run -r rubocop
+volumes:
+  bundle_install:
+    driver: local
+  bundle:
+    driver: local
