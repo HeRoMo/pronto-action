@@ -1,7 +1,7 @@
 version: '3'
 services:
   pronto:
-    image: hero/pronto-action:develop
+    image: hero/pronto-action:0.3.0
     volumes:
       - .:/pronto
     command: pronto run -r rubocop
