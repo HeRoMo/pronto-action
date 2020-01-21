@@ -5,10 +5,22 @@ source 'https://rubygems.org'
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 gem 'pronto'
-gem 'pronto-brakeman'
-gem 'pronto-rails_best_practices'
-gem 'pronto-rubocop'
-gem 'pronto-slim_lint'
-gem 'rubocop-performance'
-gem 'rubocop-rails'
-gem 'rubocop-rspec'
+gem 'pronto-brakeman', require: false
+gem 'pronto-rails_best_practices', require: false
+gem 'pronto-rubocop', require: false
+gem 'pronto-slim_lint', require: false
+
+# Rubocop Extentions
+# see https://github.com/rubocop-hq/rubocop/blob/master/manual/extensions.md
+gem 'rubocop-performance', require: false
+gem 'rubocop-rails', require: false
+gem 'rubocop-rspec', require: false
+gem 'rubocop-thread_safety', require: false
+gem 'rubocop-require_tools', require: false
+gem 'rubocop-i18n', require: false
+gem 'rubocop-sequel', require: false
+# gem 'cookstyle', require: false # don't support latest rubocop
+gem 'rubocop-rake', require: false
+
+gem 'rubocop-md', require: false
+gem 'rubocop-minitest', require: false

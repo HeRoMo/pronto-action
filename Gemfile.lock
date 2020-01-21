@@ -77,13 +77,27 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
+    rubocop-i18n (2.0.1)
+      rubocop (~> 0.51)
+    rubocop-md (0.3.1)
+      rubocop (~> 0.60)
+    rubocop-minitest (0.5.1)
+      rubocop (>= 0.74)
     rubocop-performance (1.5.2)
       rubocop (>= 0.71.0)
     rubocop-rails (2.4.1)
       rack (>= 1.1)
       rubocop (>= 0.72.0)
+    rubocop-rake (0.5.0)
+      rubocop
+    rubocop-require_tools (0.1.2)
+      rubocop (>= 0.49.1)
     rubocop-rspec (1.37.1)
       rubocop (>= 0.68.1)
+    rubocop-sequel (0.0.6)
+      rubocop (~> 0.55, >= 0.55)
+    rubocop-thread_safety (0.3.4)
+      rubocop (>= 0.51.0)
     ruby-progressbar (1.10.1)
     rugged (0.28.4.1)
     sawyer (0.8.2)
@@ -104,7 +118,7 @@ GEM
     tilt (2.0.10)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
-    unicode-display_width (1.6.0)
+    unicode-display_width (1.6.1)
     zeitwerk (2.2.2)
 
 PLATFORMS
@@ -116,9 +130,16 @@ DEPENDENCIES
   pronto-rails_best_practices
   pronto-rubocop
   pronto-slim_lint
+  rubocop-i18n
+  rubocop-md
+  rubocop-minitest
   rubocop-performance
   rubocop-rails
+  rubocop-rake
+  rubocop-require_tools
   rubocop-rspec
+  rubocop-sequel
+  rubocop-thread_safety
 
 BUNDLED WITH
    1.17.2
