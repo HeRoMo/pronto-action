@@ -11,6 +11,7 @@ gem 'pronto-rails_best_practices', require: false
 gem 'pronto-rubocop', require: false
 gem 'pronto-slim_lint', require: false
 gem 'pronto-eslint_npm', require: false
+gem 'pronto-scss', require: false
 
 # Rubocop Extentions
 # see https://github.com/rubocop-hq/rubocop/blob/master/manual/extensions.md

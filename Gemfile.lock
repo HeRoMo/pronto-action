@@ -17,6 +17,7 @@ GEM
     erubis (2.7.0)
     faraday (1.0.0)
       multipart-post (>= 1.2, < 3)
+    ffi (1.12.1)
     gitlab (4.13.1)
       httparty (~> 0.14, >= 0.14.0)
       terminal-table (~> 1.5, >= 1.5.1)
@@ -57,6 +58,9 @@ GEM
     pronto-rubocop (0.10.0)
       pronto (~> 0.10.0)
       rubocop (~> 0.50, >= 0.49.1)
+    pronto-scss (0.10.0)
+      pronto (~> 0.10.0)
+      scss_lint (~> 0.43, >= 0.43.0)
     pronto-slim_lint (0.10.0)
       pronto (~> 0.10.0)
       slim_lint (~> 0.17, >= 0.17)
@@ -71,6 +75,9 @@ GEM
       require_all (~> 3.0)
       ruby-progressbar
     rainbow (3.0.0)
+    rb-fsevent (0.10.3)
+    rb-inotify (0.10.1)
+      ffi (~> 1.0)
     require_all (3.0.0)
     rubocop (0.79.0)
       jaro_winkler (~> 1.5.1)
@@ -102,9 +109,16 @@ GEM
       rubocop (>= 0.51.0)
     ruby-progressbar (1.10.1)
     rugged (0.28.4.1)
+    sass (3.7.4)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     sawyer (0.8.2)
       addressable (>= 2.3.5)
       faraday (> 0.8, < 2.0)
+    scss_lint (0.59.0)
+      sass (~> 3.5, >= 3.5.5)
     sexp_processor (4.13.0)
     slim (4.0.1)
       temple (>= 0.7.6, < 0.9)
@@ -132,6 +146,7 @@ DEPENDENCIES
   pronto-eslint_npm
   pronto-rails_best_practices
   pronto-rubocop
+  pronto-scss
   pronto-slim_lint
   rubocop-i18n
   rubocop-md
