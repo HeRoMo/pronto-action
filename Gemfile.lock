@@ -49,6 +49,8 @@ GEM
     pronto-brakeman (0.10.0)
       brakeman (>= 3.2.0)
       pronto (~> 0.10.0)
+    pronto-eslint_npm (0.10.1)
+      pronto (~> 0.10.0)
     pronto-rails_best_practices (0.10.0)
       pronto (~> 0.10.0)
       rails_best_practices (~> 1.16, >= 1.15.0)
@@ -127,6 +129,7 @@ PLATFORMS
 DEPENDENCIES
   pronto
   pronto-brakeman
+  pronto-eslint_npm
   pronto-rails_best_practices
   pronto-rubocop
   pronto-slim_lint
