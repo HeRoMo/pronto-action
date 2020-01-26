@@ -4,7 +4,7 @@ A Github action to run [pronto](https://github.com/prontolabs/pronto).
 
 ## Support Pronto runners
 
-This action support the following runners.
+This action support the following pronto runners.
 
 - [pronto\-brakeman](https://github.com/prontolabs/pronto-brakeman)
 - [pronto\-eslint\_npm](https://github.com/doits/pronto-eslint_npm)
@@ -14,6 +14,8 @@ This action support the following runners.
 - [pronto\-slim\_lint](https://github.com/ibrahima/pronto-slim_lint)
 
 ## Suport Rubocop extentions
+
+This action support the following rubocop extentions.
 
 - [rubocop\-i18n](https://github.com/puppetlabs/rubocop-i18n)
 - [rubocop\-md](https://github.com/rubocop-hq/rubocop-md)
@@ -28,7 +30,7 @@ This action support the following runners.
 
 ## Usage
 
-Create Github workflow yaml file in *.github/workflows* directory of your repository.
+Create Github workflow definition yaml file in *.github/workflows* directory of your repository.
 
 ### Input parameters
 
@@ -66,7 +68,8 @@ jobs:
 
 ### For running eslint_npm runner
 
-If you would like to use eslint_npm runner, you have to setup Node.js and run `yarn install`(or `npm install`) before using pronto-action.
+By using eslint_npm runner, you can check your code by eslint. 
+To use eslint_npm, setup Node.js and run `yarn install`(or `npm install`) before using pronto-action.
 
 The following yaml define a workflow use eslint_npm.
 
