@@ -90,7 +90,7 @@ GEM
       rubocop (~> 0.51)
     rubocop-md (0.3.1)
       rubocop (~> 0.60)
-    rubocop-minitest (0.5.1)
+    rubocop-minitest (0.6.1)
       rubocop (>= 0.74)
     rubocop-performance (1.5.2)
       rubocop (>= 0.71.0)
