@@ -38,7 +38,7 @@ GEM
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
     parallel (1.19.1)
-    parser (2.7.0.2)
+    parser (2.7.0.4)
       ast (~> 2.4.0)
     pronto (0.10.0)
       gitlab (~> 4.0, >= 4.0.0)
@@ -66,7 +66,7 @@ GEM
       slim_lint (~> 0.17, >= 0.17)
     public_suffix (4.0.3)
     rack (2.2.2)
-    rails_best_practices (1.19.5)
+    rails_best_practices (1.20.0)
       activesupport
       code_analyzer (>= 0.5.1)
       erubis
@@ -80,7 +80,7 @@ GEM
       ffi (~> 1.0)
     require_all (3.0.0)
     rexml (3.2.4)
-    rubocop (0.80.0)
+    rubocop (0.80.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.7.0.1)
