@@ -91,7 +91,7 @@ GEM
       parser (>= 2.7.0.1)
     rubocop-i18n (2.0.2)
       rubocop (~> 0.51)
-    rubocop-md (0.3.1)
+    rubocop-md (0.3.2)
       rubocop (~> 0.60)
     rubocop-minitest (0.6.2)
       rubocop (>= 0.74)
