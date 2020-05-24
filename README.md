@@ -36,12 +36,13 @@ Create Github workflow definition yaml file in *.github/workflows* directory of 
 
 This action can be configured by the following input parameters.
 
-| name | reqire | default |
-|---|---|---|
-| github_token | true | -- |
-| commit | false | origin/master |
-| runner | false | pronto |
-| formatters | false | github_status github_pr |
+| name | require | default | description |
+|---|---|---|---|
+| github_token | true | -- |  |
+| commit | false | origin/master | Commit for the diff. |
+| runner | false | pronto | Run only the passed runners. |
+| formatters | false | github_status github_pr | Pick output formatters. |
+| path | false | '.' | Relative path to check. |
 
 see [Pronto usage](https://github.com/prontolabs/pronto#usage).
 
@@ -61,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: HeRoMo/pronto-action@v0.5.0
+      - uses: HeRoMo/pronto-action@v1.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -90,7 +91,7 @@ jobs:
       - name: yarn install
         run: yarn install
       - name: pronto run
-        uses: HeRoMo/pronto-action@v0.5.0
+        uses: HeRoMo/pronto-action@v1.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           runner: eslint_npm
