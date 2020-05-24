@@ -23,4 +23,5 @@ inputs:
     default: 'github_status github_pr'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: hero/pronto-action:develop
+  entrypoint: ["/pronto/entrypoint.sh"]
