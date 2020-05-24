@@ -39,10 +39,10 @@ This action can be configured by the following input parameters.
 | name | require | default | description |
 |---|---|---|---|
 | github_token | true | -- |  |
-| commit | false | origin/master | Commit for the diff. |
-| runner | false | pronto | Run only the passed runners. |
-| formatters | false | github_status github_pr | Pick output formatters. |
-| path | false | '.' | Relative path to check. |
+| commit | false | `origin/master` | Commit for the diff. |
+| runner | false | `rubocop` | Run only the passed runners. |
+| formatters | false | `github_status github_pr` | Pick output formatters. |
+| path | false | `'.'` | Relative path to check. |
 
 see [Pronto usage](https://github.com/prontolabs/pronto#usage).
 
