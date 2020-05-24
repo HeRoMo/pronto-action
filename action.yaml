@@ -28,4 +28,4 @@ inputs:
 runs:
   using: 'docker'
   image: hero/pronto-action:develop
-  entrypoint: ["/pronto/entrypoint.sh"]
+  entrypoint: '/pronto/entrypoint.sh'
