@@ -28,8 +28,8 @@ RUN set -eux; \
     ; \
     bundle install --jobs 20 --retry 5 \
     ; \
-    # apk del --purge .ruby-builddeps \
-    # ; \
+    apk del --purge .ruby-builddeps \
+    ; \
     apk add --no-cache \
         jq \
     ;
