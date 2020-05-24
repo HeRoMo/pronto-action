@@ -1,9 +1,9 @@
-FROM node:12.16.1-alpine as nodejs
-FROM ruby:2.6.5-alpine
+FROM node:12.16.3-alpine as nodejs
+FROM ruby:2.7.1-alpine
 
 # Install Node.js
-ENV NODE_VERSION 12.16.1
-ENV YARN_VERSION 1.22.0
+ENV NODE_VERSION 12.16.3
+ENV YARN_VERSION 1.22.4
 RUN mkdir -p /opt
 COPY --from=nodejs /opt/yarn-v${YARN_VERSION} /opt/yarn
 COPY --from=nodejs /usr/local/bin/node /usr/local/bin/
@@ -28,8 +28,8 @@ RUN set -eux; \
     ; \
     bundle install --jobs 20 --retry 5 \
     ; \
-    apk del --purge .ruby-builddeps \
-    ; \
+    # apk del --purge .ruby-builddeps \
+    # ; \
     apk add --no-cache \
         jq \
     ;
