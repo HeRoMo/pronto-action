@@ -27,4 +27,5 @@ inputs:
     default: '.'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: docker://hero/pronto-action:develop
+  entrypoint: '/pronto/entrypoint.sh'

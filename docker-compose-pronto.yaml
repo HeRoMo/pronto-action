@@ -1,12 +1,12 @@
 version: '3'
 services:
   pronto:
-    image: hero/pronto-action:0.5.0
+    image: hero/pronto-action:develop
     volumes:
       - .:/pronto
-    command: pronto run -r rubocop
-volumes:
-  bundle_install:
-    driver: local
-  bundle:
-    driver: local
+    entrypoint: ["pronto"]
+    command: run -r rubocop
+
+# Run the following command to run pronto locally
+# > docker-compose -f docker-compose-pronto.yaml run --rm pronto
+# > docker-compose -f docker-compose-pronto.yaml run --rm pronto run -r rubocop --staged
