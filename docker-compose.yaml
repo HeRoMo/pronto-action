@@ -3,7 +3,7 @@ services:
   pronto:
     build:
       context: .
-      dockerfile: Dockerfile.base
+      dockerfile: Dockerfile
     image: pronto-action.dev
     volumes:
       - .:/pronto
