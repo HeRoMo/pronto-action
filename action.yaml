@@ -21,6 +21,10 @@ inputs:
     description: 'Pick output formatters.'
     required: false
     default: 'github_status github_pr'
+  path:
+    description: 'Relative path to check'
+    required: false
+    default: '.'
 runs:
   using: 'docker'
   image: hero/pronto-action:develop
