@@ -64,7 +64,7 @@ GEM
       pronto (~> 0.10.0)
       slim_lint (~> 0.17, >= 0.17)
     public_suffix (4.0.5)
-    rack (2.2.2)
+    rack (2.2.3)
     rails_best_practices (1.20.0)
       activesupport
       code_analyzer (>= 0.5.1)
