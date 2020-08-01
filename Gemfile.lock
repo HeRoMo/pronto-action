@@ -63,6 +63,9 @@ GEM
     pronto-slim_lint (0.10.0)
       pronto (~> 0.10.0)
       slim_lint (~> 0.17, >= 0.17)
+    pronto-sorbet (0.2.0)
+      pronto (~> 0.10.0)
+      sorbet (~> 0.5.0)
     public_suffix (4.0.5)
     rack (2.2.3)
     rails_best_practices (1.20.0)
@@ -132,6 +135,9 @@ GEM
     slim_lint (0.20.1)
       rubocop (>= 0.78.0)
       slim (>= 3.0, < 5.0)
+    sorbet (0.5.5848)
+      sorbet-static (= 0.5.5848)
+    sorbet-static (0.5.5848-universal-darwin-14)
     temple (0.8.2)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
@@ -154,6 +160,7 @@ DEPENDENCIES
   pronto-rubocop
   pronto-scss
   pronto-slim_lint
+  pronto-sorbet
   rubocop-i18n
   rubocop-md
   rubocop-minitest

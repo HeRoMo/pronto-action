@@ -12,6 +12,7 @@ This action support the following pronto runners.
 - [pronto\-rubocop](https://github.com/prontolabs/pronto-rubocop)
 - [pronto\-scss](https://github.com/prontolabs/pronto-scss)
 - [pronto\-slim\_lint](https://github.com/ibrahima/pronto-slim_lint)
+- [pronto\-sorbet](https://github.com/teamsimplepay/pronto-sorbet)
 
 ## Suport Rubocop extentions
 
