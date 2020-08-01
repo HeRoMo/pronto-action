@@ -6,6 +6,7 @@ on:
       - Dockerfile
       - Gemfile
       - Gemfile.lock
+jobs:
   pronto:
     runs-on: ubuntu-latest
     steps:
