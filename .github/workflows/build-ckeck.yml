@@ -1,0 +1,14 @@
+name: build ckeck
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - Dockerfile
+      - Gemfile
+      - Gemfile.lock
+  pronto:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: build Docker image
+        run: docker build -t pronto-action:test .
