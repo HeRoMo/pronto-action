@@ -12,7 +12,7 @@ gem 'pronto-rails_best_practices', require: false
 gem 'pronto-rubocop', require: false
 gem 'pronto-scss', require: false
 gem 'pronto-slim_lint', require: false
-gem 'hogehoge', require: false
+gem 'pronto-sorbet', require: false
 
 # Rubocop Extentions
 # see https://github.com/rubocop-hq/rubocop/blob/master/manual/extensions.md
