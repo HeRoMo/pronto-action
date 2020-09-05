@@ -110,8 +110,8 @@ GEM
       rubocop
     rubocop-require_tools (0.1.2)
       rubocop (>= 0.49.1)
-    rubocop-rspec (1.42.0)
-      rubocop (>= 0.87.0)
+    rubocop-rspec (1.43.2)
+      rubocop (~> 0.87)
     rubocop-sequel (0.0.6)
       rubocop (~> 0.55, >= 0.55)
     rubocop-thread_safety (0.4.1)
