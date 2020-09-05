@@ -18,5 +18,5 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GHCR_TOKEN }}
           registry: ghcr.io
-          repository: HeRoMo/pronto-action
+          repository: heromo/pronto-action
           tag_with_ref: true
