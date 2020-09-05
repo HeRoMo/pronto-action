@@ -8,12 +8,12 @@ on:
     types: [released]
 jobs:
   push_to_registry:
-    name: Push Docker image to GitHub Packages
+    name: Push Docker image to GitHub Container Registry
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-      - name: Push to GitHub Packages
+      - name: Push to GitHub Container Registry
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
