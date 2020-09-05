@@ -12,6 +12,7 @@ This action support the following pronto runners.
 - [pronto\-rubocop](https://github.com/prontolabs/pronto-rubocop)
 - [pronto\-scss](https://github.com/prontolabs/pronto-scss)
 - [pronto\-slim\_lint](https://github.com/ibrahima/pronto-slim_lint)
+- [pronto\-sorbet](https://github.com/teamsimplepay/pronto-sorbet)
 
 ## Suport Rubocop extentions
 
@@ -62,7 +63,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: HeRoMo/pronto-action@v1.1.0
+      - uses: HeRoMo/pronto-action@v1.3.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -91,7 +92,7 @@ jobs:
       - name: yarn install
         run: yarn install
       - name: pronto run
-        uses: HeRoMo/pronto-action@v1.1.0
+        uses: HeRoMo/pronto-action@v1.3.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           runner: eslint_npm
