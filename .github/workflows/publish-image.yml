@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - publish-to-ghcr
   release:
     types: [released]
 jobs:
