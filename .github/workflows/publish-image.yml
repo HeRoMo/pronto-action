@@ -1,5 +1,9 @@
 name: Publish Docker image
 on:
+  push:
+    branches:
+      - master
+      - publish-to-ghcr
   release:
     types: [published]
 jobs:
