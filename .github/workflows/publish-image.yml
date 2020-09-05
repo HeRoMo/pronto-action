@@ -20,4 +20,4 @@ jobs:
           registry: ghcr.io
           repository: heromo/pronto-action
           tag_with_ref: true
-      - run: docker ps -a
+      - run: cat /home/runner/work/_temp/_github_home/.docker/config.json
