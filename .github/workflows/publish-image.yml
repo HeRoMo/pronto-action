@@ -3,15 +3,12 @@ on:
   push:
     branches:
       - master
-      - publish-to-ghcr
   release:
-    types: [published]
+    types: [released]
 jobs:
   push_to_registry:
     name: Push Docker image to GitHub Packages
     runs-on: ubuntu-latest
-    if: |
-      !startsWith(github.event.release.tag_name, 'v')
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
