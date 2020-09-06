@@ -4,20 +4,24 @@ on:
     branches:
       - master
       - develop
-  release:
-    types: [released]
+      - modify-workflow
+  create:
+  # release:
+  #   types: [released]
 jobs:
   push_to_registry:
     name: Push Docker image to GitHub Container Registry
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@v2
-      - name: Push to GitHub Container Registry
-        uses: docker/build-push-action@v1
-        with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GHCR_TOKEN }}
-          registry: ghcr.io
-          repository: heromo/pronto-action
-          tag_with_ref: true
+      - run: ${{ github.event_name }}
+      - run: ${{ github.event.ref_type }}
+      # - name: Check out the repo
+      #   uses: actions/checkout@v2
+      # - name: Push to GitHub Container Registry
+      #   uses: docker/build-push-action@v1
+      #   with:
+      #     username: ${{ github.actor }}
+      #     password: ${{ secrets.GHCR_TOKEN }}
+      #     registry: ghcr.io
+      #     repository: heromo/pronto-action
+      #     tag_with_ref: true
