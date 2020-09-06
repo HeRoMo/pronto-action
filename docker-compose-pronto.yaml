@@ -1,7 +1,7 @@
 version: '3'
 services:
   pronto:
-    image: hero/pronto-action:1.3.0
+    image: ghcr.io/heromo/pronto-action:1.4.0
     volumes:
       - .:/pronto
     entrypoint: ["pronto"]
