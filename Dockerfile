@@ -1,5 +1,5 @@
-FROM node:12.16.3-alpine as nodejs
-FROM ruby:2.7.1-alpine
+FROM node:12.18.3-alpine3.12 as nodejs
+FROM ruby:2.7.1-alpine3.12
 
 # Install Node.js
 ENV NODE_VERSION 12.16.3
@@ -20,7 +20,7 @@ WORKDIR /pronto
 COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 RUN set -eux; \
-    apk add --update --no-cache --virtual .ruby-builddeps \
+    apk add --no-cache --virtual .ruby-builddeps \
         alpine-sdk \
         cmake \
         openssl \
