@@ -5,7 +5,7 @@ on:
       - master
       - develop
       - modify-workflow
-  # create: {}
+  create:
   # release:
   #   types: [released]
 jobs:
@@ -13,8 +13,8 @@ jobs:
     name: Push Docker image to GitHub Container Registry
     runs-on: ubuntu-latest
     steps:
-      - run: ${{ github.event_name }}
-      - run: ${{ github.event.ref_type }}
+      - run: echo ${{ github.event_name }}
+      - run: echo ${{ github.event.ref_type }}
       # - name: Check out the repo
       #   uses: actions/checkout@v2
       # - name: Push to GitHub Container Registry
