@@ -66,6 +66,7 @@ jobs:
       - uses: HeRoMo/pronto-action@v1.5.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit: origin/main
 ```
 
 ### For running eslint_npm runner

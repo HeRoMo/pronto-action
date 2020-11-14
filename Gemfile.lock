@@ -1,7 +1,16 @@
+GIT
+  remote: https://github.com/prontolabs/pronto-rubocop
+  revision: 170abfe959f5f267cee658a325be1aa79aba0cd0
+  branch: master
+  specs:
+    pronto-rubocop (0.10.0)
+      pronto (~> 0.10.0)
+      rubocop (>= 0.49.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.0.3.3)
+    activesupport (6.0.3.4)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -15,8 +24,9 @@ GEM
       sexp_processor
     concurrent-ruby (1.1.7)
     erubis (2.7.0)
-    faraday (1.0.1)
+    faraday (1.1.0)
       multipart-post (>= 1.2, < 3)
+      ruby2_keywords
     ffi (1.13.1)
     gitlab (4.16.1)
       httparty (~> 0.14, >= 0.14.0)
@@ -33,11 +43,11 @@ GEM
     minitest (5.14.2)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
-    octokit (4.18.0)
+    octokit (4.19.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
     parallel (1.19.2)
-    parser (2.7.1.5)
+    parser (2.7.2.0)
       ast (~> 2.4.1)
     pronto (0.10.0)
       gitlab (~> 4.0, >= 4.0.0)
@@ -54,9 +64,6 @@ GEM
     pronto-rails_best_practices (0.10.0)
       pronto (~> 0.10.0)
       rails_best_practices (~> 1.16, >= 1.15.0)
-    pronto-rubocop (0.10.0)
-      pronto (~> 0.10.0)
-      rubocop (~> 0.50, >= 0.49.1)
     pronto-scss (0.10.0)
       pronto (~> 0.10.0)
       scss_lint (~> 0.43, >= 0.43.0)
@@ -80,19 +87,19 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    regexp_parser (1.8.1)
+    regexp_parser (1.8.2)
     require_all (3.0.0)
     rexml (3.2.4)
-    rubocop (0.92.0)
+    rubocop (0.93.1)
       parallel (~> 1.10)
       parser (>= 2.7.1.5)
       rainbow (>= 2.2.2, < 4.0)
-      regexp_parser (>= 1.7)
+      regexp_parser (>= 1.8)
       rexml
-      rubocop-ast (>= 0.5.0)
+      rubocop-ast (>= 0.6.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
-    rubocop-ast (0.7.1)
+    rubocop-ast (1.1.1)
       parser (>= 2.7.1.5)
     rubocop-i18n (2.0.2)
       rubocop (~> 0.51)
@@ -111,13 +118,15 @@ GEM
       rubocop
     rubocop-require_tools (0.1.2)
       rubocop (>= 0.49.1)
-    rubocop-rspec (1.43.2)
+    rubocop-rspec (1.44.1)
       rubocop (~> 0.87)
+      rubocop-ast (>= 0.7.1)
     rubocop-sequel (0.0.6)
       rubocop (~> 0.55, >= 0.55)
-    rubocop-thread_safety (0.4.1)
-      rubocop (>= 0.51.0)
+    rubocop-thread_safety (0.4.2)
+      rubocop (>= 0.53.0)
     ruby-progressbar (1.10.1)
+    ruby2_keywords (0.0.2)
     rugged (0.99.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -133,12 +142,12 @@ GEM
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
-    slim_lint (0.20.1)
+    slim_lint (0.20.2)
       rubocop (>= 0.78.0)
       slim (>= 3.0, < 5.0)
-    sorbet (0.5.5929)
-      sorbet-static (= 0.5.5929)
-    sorbet-static (0.5.5929-universal-darwin-14)
+    sorbet (0.5.6032)
+      sorbet-static (= 0.5.6032)
+    sorbet-static (0.5.6032-universal-darwin-14)
     temple (0.8.2)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
@@ -148,7 +157,7 @@ GEM
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
     unicode-display_width (1.7.0)
-    zeitwerk (2.4.0)
+    zeitwerk (2.4.1)
 
 PLATFORMS
   ruby
@@ -158,7 +167,7 @@ DEPENDENCIES
   pronto-brakeman
   pronto-eslint_npm
   pronto-rails_best_practices
-  pronto-rubocop
+  pronto-rubocop!
   pronto-scss
   pronto-slim_lint
   pronto-sorbet
