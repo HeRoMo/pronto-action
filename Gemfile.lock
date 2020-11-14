@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/prontolabs/pronto-rubocop
-  revision: 170abfe959f5f267cee658a325be1aa79aba0cd0
+  revision: af1aad420319a87b803c8383174320a2528d09cb
   branch: master
   specs:
     pronto-rubocop (0.10.0)
@@ -39,14 +39,14 @@ GEM
     json (2.3.1)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2020.0512)
+    mime-types-data (3.2020.1104)
     minitest (5.14.2)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     octokit (4.19.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
-    parallel (1.19.2)
+    parallel (1.20.0)
     parser (2.7.2.0)
       ast (~> 2.4.1)
     pronto (0.10.0)
@@ -145,9 +145,9 @@ GEM
     slim_lint (0.20.2)
       rubocop (>= 0.78.0)
       slim (>= 3.0, < 5.0)
-    sorbet (0.5.6032)
-      sorbet-static (= 0.5.6032)
-    sorbet-static (0.5.6032-universal-darwin-14)
+    sorbet (0.5.6052)
+      sorbet-static (= 0.5.6052)
+    sorbet-static (0.5.6052-universal-darwin-14)
     temple (0.8.2)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
