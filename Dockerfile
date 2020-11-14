@@ -1,9 +1,9 @@
-FROM node:12.18.3-alpine3.12 as nodejs
-FROM ruby:2.7.1-alpine3.12
+FROM node:14.15.0-alpine3.12 as nodejs
+FROM ruby:2.7.2-alpine3.12
 
 # Install Node.js
-ENV NODE_VERSION 12.16.3
-ENV YARN_VERSION 1.22.4
+ENV NODE_VERSION 14.15.0
+ENV YARN_VERSION 1.22.5
 RUN mkdir -p /opt
 COPY --from=nodejs /opt/yarn-v${YARN_VERSION} /opt/yarn
 COPY --from=nodejs /usr/local/bin/node /usr/local/bin/
