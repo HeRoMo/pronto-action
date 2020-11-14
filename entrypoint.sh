@@ -2,6 +2,8 @@
 
 # cd ${GITHUB_WORKSPACE}
 echo ${GITHUB_WORKSPACE} # TODO: Delete
+pwd
+ls -l
 
 # Action Inputs
 export GITHUB_TOKEN=${INPUT_GITHUB_TOKEN}
