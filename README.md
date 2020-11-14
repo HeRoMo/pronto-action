@@ -29,6 +29,9 @@ This action support the following rubocop extentions.
 - [rubocop\-sequel](https://github.com/rubocop-hq/rubocop-sequel)
 - [rubocop\-thread\_safety](https://github.com/covermymeds/rubocop-thread_safety)
 
+pronto-rubocop supports suggestion comments on github pullrequest. 
+see https://github.com/prontolabs/pronto-rubocop#suggestions
+
 ## Usage
 
 Create Github workflow definition yaml file in *.github/workflows* directory of your repository.
@@ -63,7 +66,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: HeRoMo/pronto-action@v1.5.0
+      - uses: HeRoMo/pronto-action@v1.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           commit: origin/main
@@ -89,11 +92,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '12.18.x'
+          node-version: '14.15.x'
       - name: yarn install
         run: yarn install
       - name: pronto run
-        uses: HeRoMo/pronto-action@v1.5.0
+        uses: HeRoMo/pronto-action@v1.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           runner: eslint_npm
