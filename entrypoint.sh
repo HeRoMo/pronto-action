@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# cd ${GITHUB_WORKSPACE}
+cd /pronto
 echo ${GITHUB_WORKSPACE} # TODO: Delete
 pwd
 ls -l
