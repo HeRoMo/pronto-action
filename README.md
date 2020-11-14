@@ -63,7 +63,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: HeRoMo/pronto-action@v1.5.0
+      - uses: HeRoMo/pronto-action@v1.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           commit: origin/main
@@ -93,7 +93,7 @@ jobs:
       - name: yarn install
         run: yarn install
       - name: pronto run
-        uses: HeRoMo/pronto-action@v1.5.0
+        uses: HeRoMo/pronto-action@v1.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           runner: eslint_npm
