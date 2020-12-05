@@ -15,14 +15,6 @@ GIT
       pronto (~> 0.10.0)
       rubocop (>= 0.49.1)
 
-GIT
-  remote: https://github.com/rubocop-hq/rubocop-sequel
-  revision: ab11c24f64a0eef97552c91ac8ce951ec891b881
-  branch: master
-  specs:
-    rubocop-sequel (0.1.0)
-      rubocop (~> 1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -135,6 +127,8 @@ GEM
     rubocop-rspec (2.0.1)
       rubocop (~> 1.0)
       rubocop-ast (>= 1.1.0)
+    rubocop-sequel (0.1.0)
+      rubocop (~> 1.0)
     rubocop-thread_safety (0.4.2)
       rubocop (>= 0.53.0)
     ruby-progressbar (1.10.1)
@@ -191,7 +185,7 @@ DEPENDENCIES
   rubocop-rake
   rubocop-require_tools
   rubocop-rspec
-  rubocop-sequel!
+  rubocop-sequel
   rubocop-thread_safety
 
 BUNDLED WITH

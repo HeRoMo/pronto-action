@@ -21,8 +21,9 @@ gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
 gem 'rubocop-thread_safety', require: false
 gem 'rubocop-require_tools', require: false
+# see https://github.com/puppetlabs/rubocop-i18n/pull/46
 gem 'rubocop-i18n', branch: 'upgrade-to-rubocop-1-0', github: 'mvz/rubocop-i18n', require: false
-gem 'rubocop-sequel', branch: 'master', github: 'rubocop-hq/rubocop-sequel', require: false
+gem 'rubocop-sequel', require: false
 # gem 'cookstyle', require: false # don't support latest rubocop
 gem 'rubocop-rake', require: false
 
