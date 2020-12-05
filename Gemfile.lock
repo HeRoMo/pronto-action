@@ -36,8 +36,8 @@ GEM
       multipart-post (>= 1.2, < 3)
       ruby2_keywords
     ffi (1.13.1)
-    gitlab (4.16.1)
-      httparty (~> 0.14, >= 0.14.0)
+    gitlab (4.17.0)
+      httparty (~> 0.18)
       terminal-table (~> 1.5, >= 1.5.1)
     httparty (0.18.1)
       mime-types (~> 3.0)
@@ -151,9 +151,9 @@ GEM
     slim_lint (0.20.2)
       rubocop (>= 0.78.0)
       slim (>= 3.0, < 5.0)
-    sorbet (0.5.6076)
-      sorbet-static (= 0.5.6076)
-    sorbet-static (0.5.6076-universal-darwin-14)
+    sorbet (0.5.6133)
+      sorbet-static (= 0.5.6133)
+    sorbet-static (0.5.6133-universal-darwin-14)
     temple (0.8.2)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
@@ -163,7 +163,7 @@ GEM
     tzinfo (1.2.8)
       thread_safe (~> 0.1)
     unicode-display_width (1.7.0)
-    zeitwerk (2.4.1)
+    zeitwerk (2.4.2)
 
 PLATFORMS
   ruby
