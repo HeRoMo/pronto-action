@@ -42,8 +42,8 @@ This action can be configured by the following input parameters.
 
 | name | require | default | description |
 |---|---|---|---|
-| github_token | true | -- |  |
-| commit | false | `origin/master` | Commit for the diff. |
+| github_token | true | ${{ github.token }} | default value is setted by github workflow automatically. |
+| commit | false | `origin/${{ github.base_ref }}` | Commit for the diff.<br>(`origin/main`, if base of pullrequest is `main`) |
 | runner | false | `rubocop` | Run only the passed runners. |
 | formatters | false | `github_status github_pr` | Pick output formatters. |
 | path | false | `'.'` | Relative path to check. |
@@ -69,7 +69,6 @@ jobs:
       - uses: HeRoMo/pronto-action@v1.9.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          commit: origin/main
 ```
 
 ### For running eslint_npm runner
