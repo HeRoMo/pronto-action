@@ -12,7 +12,7 @@ inputs:
   commit:
     description: 'Commit for the diff.'
     required: false
-    default: 'origin/master'
+    default: 'origin/${{ github.base_ref }}'
   runner:
     description: 'Run only the passed runners.'
     required: false
