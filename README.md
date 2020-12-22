@@ -29,7 +29,7 @@ This action support the following rubocop extentions.
 - [rubocop\-sequel](https://github.com/rubocop-hq/rubocop-sequel)
 - [rubocop\-thread\_safety](https://github.com/covermymeds/rubocop-thread_safety)
 
-pronto-rubocop supports suggestion comments on github pullrequest. 
+pronto-rubocop supports suggestion comments on Github pullrequest. 
 see https://github.com/prontolabs/pronto-rubocop#suggestions
 
 ## Usage
@@ -39,7 +39,7 @@ Create Github workflow definition yaml file in *.github/workflows* directory of 
 ### Input parameters
 
 This action can be configured by the following input parameters.
-
+<!-- textlint-disable spellcheck-tech-word -->
 | name | require | default | description |
 |---|---|---|---|
 | github_token | true | ${{ github.token }} | default value is setted by github workflow automatically. |
@@ -47,7 +47,7 @@ This action can be configured by the following input parameters.
 | runner | false | `rubocop` | Run only the passed runners. |
 | formatters | false | `github_status github_pr` | Pick output formatters. |
 | path | false | `'.'` | Relative path to check. |
-
+<!-- textlint-enable spellcheck-tech-word -->
 see [Pronto usage](https://github.com/prontolabs/pronto#usage).
 
 ## Github workflow definition samples
