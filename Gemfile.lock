@@ -125,7 +125,7 @@ GEM
       rubocop (~> 1.0)
     rubocop-thread_safety (0.4.2)
       rubocop (>= 0.53.0)
-    ruby-progressbar (1.10.1)
+    ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.2)
     rugged (0.99.0)
     sass (3.7.4)
