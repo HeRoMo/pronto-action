@@ -1,4 +1,4 @@
-FROM node:14.15.1-alpine3.12 as nodejs
+FROM node:14.15.3-alpine3.12 as nodejs
 FROM ruby:2.7.2-alpine3.12
 
 # Install Node.js
