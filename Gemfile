@@ -7,7 +7,7 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 # Pronto and Extentions
 gem 'pronto', '~> 0.11.0'
 gem 'pronto-brakeman', '~> 0.11.0', require: false
-gem 'pronto-eslint', '~> 0.11.0', require: false
+gem 'pronto-eslint_npm', branch: 'pronto-0.11.0', github: 'HeRoMo/pronto-eslint_npm', require: false
 gem 'pronto-rails_best_practices', '~> 0.11.0', require: false
 gem 'pronto-rubocop', branch: 'rubocop-1.0.0', github: 'eitoball/pronto-rubocop', require: false
 gem 'pronto-scss', '~> 0.11.0', require: false
