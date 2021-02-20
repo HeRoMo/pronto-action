@@ -158,7 +158,7 @@ DEPENDENCIES
   pronto-brakeman (~> 0.11.0)
   pronto-eslint_npm!
   pronto-rails_best_practices (~> 0.11.0)
-  pronto-rubocop
+  pronto-rubocop (~> 0.11.0)
   pronto-scss (~> 0.11.0)
   pronto-sorbet
   rubocop-i18n
