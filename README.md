@@ -66,7 +66,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: HeRoMo/pronto-action@v1.13.0
+      - uses: HeRoMo/pronto-action@v1.14.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -91,11 +91,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '14.15.x'
+          node-version: '14.16.x'
       - name: yarn install
         run: yarn install
       - name: pronto run
-        uses: HeRoMo/pronto-action@v1.13.0
+        uses: HeRoMo/pronto-action@v1.14.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           runner: eslint_npm
