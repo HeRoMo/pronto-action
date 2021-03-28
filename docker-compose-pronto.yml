@@ -1,7 +1,7 @@
 version: '3'
 services:
   pronto:
-    image: ghcr.io/heromo/pronto-action:develop
+    image: ghcr.io/heromo/pronto-action:1.15.0
     volumes:
       - .:/app
     entrypoint: ["bundle", "exec", "pronto"]
