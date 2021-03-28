@@ -1,7 +1,7 @@
 version: '3'
 services:
   pronto:
-    image: ghcr.io/heromo/pronto-action:1.14.0
+    image: ghcr.io/heromo/pronto-action:develop
     volumes:
       - .:/app
     entrypoint: ["bundle", "exec", "pronto"]
@@ -9,4 +9,4 @@ services:
 
 # Run the following command to run pronto locally
 # > docker-compose -f docker-compose-pronto.yml run --rm pronto
-# > docker-compose -f docker-compose-pronto.yml run --rm pronto run -r rubocop --staged
+# > docker-compose -f docker-compose-pronto.yml run --rm pronto run /app -r rubocop --staged
