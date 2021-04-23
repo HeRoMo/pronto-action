@@ -1,5 +1,5 @@
 FROM node:14.16.1-alpine3.13 as nodejs
-FROM ruby:2.7.2-alpine3.13
+FROM ruby:2.7.3-alpine3.13
 
 # Install Node.js
 ENV NODE_VERSION 14.16.1
