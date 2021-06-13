@@ -103,5 +103,34 @@ jobs:
 
 If does not work successfully, configure elint_npm with  *.pronto_eslint_npm.yml* file. see [Configuration of ESLintNPM](https://github.com/doits/pronto-eslint_npm#configuration-of-eslintnpm)
 
+## Required `permissions` in github workflow
+
+When *Read repository contents permission* in *Settings/Actions* of the repository is setted, you have to add `permissions` to the Github workflow difinition YAML.
+
+The following permissions are required.
+
+- pull-requests: write
+- statuses: write
+
+The followoing yaml is a workflow difinition of pronto-action with permissions.
+
+```yaml
+name: Pronto
+on:
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  pronto:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      statuses: write 
+    steps:
+      - uses: actions/checkout@v1
+      - uses: HeRoMo/pronto-action@v1.19.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+```
+
 ## LICENSE
 [MIT](LICENSE)
