@@ -5,6 +5,9 @@ on:
 jobs:
   pronto:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      statuses: write
     steps:
       - uses: actions/checkout@v1
       - uses: HeRoMo/pronto-action@v1.19.0
