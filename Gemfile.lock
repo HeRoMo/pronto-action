@@ -36,7 +36,7 @@ GEM
     faraday-excon (1.1.0)
     faraday-net_http (1.0.1)
     faraday-net_http_persistent (1.1.0)
-    ffi (1.15.1)
+    ffi (1.15.3)
     gitlab (4.17.0)
       httparty (~> 0.18)
       terminal-table (~> 1.5, >= 1.5.1)
