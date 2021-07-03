@@ -10,6 +10,6 @@ jobs:
       statuses: write
     steps:
       - uses: actions/checkout@v1
-      - uses: HeRoMo/pronto-action@v1.20.0
+      - uses: HeRoMo/pronto-action@v1.21.0
         with:
           github_token: ${{ secrets.WORKFLOW_TOKEN }}
