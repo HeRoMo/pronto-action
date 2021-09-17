@@ -23,7 +23,7 @@ GEM
       sexp_processor
     concurrent-ruby (1.1.9)
     erubis (2.7.0)
-    faraday (1.7.1)
+    faraday (1.7.2)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -156,12 +156,11 @@ GEM
     sorbet (0.5.9147)
       sorbet-static (= 0.5.9147)
     sorbet-static (0.5.9147-universal-darwin-14)
-    terminal-table (1.8.0)
-      unicode-display_width (~> 1.1, >= 1.1.1)
+    terminal-table (1.6.0)
     thor (1.1.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    unicode-display_width (1.8.0)
+    unicode-display_width (2.1.0)
     zeitwerk (2.4.2)
 
 PLATFORMS
