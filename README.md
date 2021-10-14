@@ -42,7 +42,7 @@ This action can be configured by the following input parameters.
 <!-- textlint-disable spellcheck-tech-word -->
 | name | require | default | description |
 |---|---|---|---|
-| github_token | true | ${{ github.token }} | default value is setted by github workflow automatically. |
+| github_token | false | ${{ github.token }} | default value is setted by github workflow automatically. |
 | commit | false | `origin/${{ github.base_ref }}` | Commit for the diff.<br>(`origin/main`, if base of pullrequest is `main`) |
 | runner | false | `rubocop` | Run only the passed runners. |
 | formatters | false | `github_status github_pr` | Pick output formatters. |
@@ -65,10 +65,10 @@ jobs:
   pronto:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: HeRoMo/pronto-action@v1.26.0
+      - uses: actions/checkout@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: HeRoMo/pronto-action@v1.26.0
 ```
 
 ### For running eslint_npm runner
@@ -87,7 +87,9 @@ jobs:
   eslint_npm:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -97,13 +99,12 @@ jobs:
       - name: pronto run
         uses: HeRoMo/pronto-action@v1.26.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           runner: eslint_npm
 ```
 
 If does not work successfully, configure elint_npm with  *.pronto_eslint_npm.yml* file. see [Configuration of ESLintNPM](https://github.com/doits/pronto-eslint_npm#configuration-of-eslintnpm)
 
-## Required `permissions` in github workflow
+## Required `permissions` in GitHub workflow
 
 When *Read repository contents permission* in *Settings/Actions* of the repository is setted, you have to add `permissions` to the Github workflow difinition YAML.
 
@@ -126,10 +127,10 @@ jobs:
       pull-requests: write
       statuses: write 
     steps:
-      - uses: actions/checkout@v1
-      - uses: HeRoMo/pronto-action@v1.26.0
+      - uses: actions/checkout@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: HeRoMo/pronto-action@v1.26.0
 ```
 
 ## LICENSE
