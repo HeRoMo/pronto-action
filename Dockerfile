@@ -1,11 +1,11 @@
 # https://hub.docker.com/_/node
-FROM node:14.18.0-alpine3.13 as nodejs
+FROM node:16.13.0-alpine3.13 as nodejs
 # https://hub.docker.com/_/ruby
 FROM ruby:2.7.4-alpine3.13
 
 # Install Node.js
-ENV NODE_VERSION 14.18.0
-ENV YARN_VERSION 1.22.5
+ENV NODE_VERSION 16.13.0
+ENV YARN_VERSION 1.22.15
 RUN mkdir -p /opt
 COPY --from=nodejs /opt/yarn-v${YARN_VERSION} /opt/yarn
 COPY --from=nodejs /usr/local/bin/node /usr/local/bin/
