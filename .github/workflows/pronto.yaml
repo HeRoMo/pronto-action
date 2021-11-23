@@ -9,7 +9,9 @@ jobs:
       pull-requests: write
       statuses: write
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - uses: HeRoMo/pronto-action@v1.26.0
         with:
           github_token: ${{ secrets.WORKFLOW_TOKEN }}
