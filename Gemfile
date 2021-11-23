@@ -15,7 +15,7 @@ gem 'pronto-scss', '~> 0.11.0', require: false
 gem 'pronto-sorbet', require: false
 
 # Rubocop Extentions
-# see https://github.com/rubocop-hq/rubocop/blob/master/manual/extensions.md
+# see https://docs.rubocop.org/rubocop/extensions.html
 gem 'rubocop-performance', require: false
 gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
