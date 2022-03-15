@@ -10,6 +10,6 @@ jobs:
   pronto:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: build Docker image
         run: docker build -t pronto-action:test .

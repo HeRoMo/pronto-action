@@ -64,8 +64,11 @@ on:
 jobs:
   pronto:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      statuses: write 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - uses: HeRoMo/pronto-action@v1.30.0
@@ -86,8 +89,11 @@ on:
 jobs:
   eslint_npm:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      statuses: write 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup Node.js
@@ -127,7 +133,7 @@ jobs:
       pull-requests: write
       statuses: write 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - uses: HeRoMo/pronto-action@v1.30.0
