@@ -1,13 +1,13 @@
 # Default values of ARGs in global scope
-ARG NODE_VER=16.14.2
+ARG NODE_VER=16.15.0
 ARG YARN_VER=1.22.18
 ARG RUBY_VER=2.7.6
 
 # https://hub.docker.com/_/node
-FROM node:${NODE_VER}-alpine3.14 as nodejs
+FROM node:${NODE_VER}-alpine3.15 as nodejs
 
 # https://hub.docker.com/_/ruby
-FROM ruby:${RUBY_VER}-alpine3.14
+FROM ruby:${RUBY_VER}-alpine3.15
 ARG NODE_VER # stage local scope
 ARG YARN_VER # stage local scope
 
