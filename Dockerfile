@@ -1,7 +1,7 @@
 # Default values of ARGs in global scope
 ARG NODE_VER=16.16.0
 ARG YARN_VER=1.22.19
-ARG RUBY_VER=2.7.6
+ARG RUBY_VER=3.1.2
 
 # https://hub.docker.com/_/node
 FROM node:${NODE_VER}-alpine3.16 as nodejs
@@ -38,7 +38,7 @@ RUN set -eux; \
     ; \
     bundle install --jobs 20 --retry 5 \
     ; \
-    apk del --purge .ruby-builddeps \
+    apk del --purge --no-network .ruby-builddeps \
     ; \
     apk add --no-cache \
         jq \
