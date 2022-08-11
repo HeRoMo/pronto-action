@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/tleish/pronto-erb_lint
+  revision: 4b49373451b3ff26cbdec0c85d130463838d7ae7
+  specs:
+    pronto-erb_lint (0.1.6)
+      erb_lint (~> 0.1.1)
+      pronto (> 0.9.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -29,7 +37,7 @@ GEM
       sexp_processor
     concurrent-ruby (1.1.10)
     crass (1.0.6)
-    erb_lint (0.0.37)
+    erb_lint (0.1.3)
       activesupport
       better_html (~> 1.0.7)
       html_tokenizer
@@ -83,9 +91,6 @@ GEM
     pronto-brakeman (0.11.1)
       brakeman (>= 3.2.0)
       pronto (~> 0.11.0)
-    pronto-erb_lint (0.1.5)
-      erb_lint (~> 0.0.24)
-      pronto (> 0.9.0)
     pronto-eslint_npm (0.11.0)
       pronto (~> 0.11.0)
     pronto-rails_best_practices (0.11.0)
@@ -189,7 +194,7 @@ PLATFORMS
 DEPENDENCIES
   pronto (~> 0.11.0)
   pronto-brakeman (~> 0.11.0)
-  pronto-erb_lint (~> 0.1.5)
+  pronto-erb_lint!
   pronto-eslint_npm (~> 0.11.0)
   pronto-rails_best_practices (~> 0.11.0)
   pronto-rubocop (~> 0.11.0)
