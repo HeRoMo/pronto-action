@@ -18,16 +18,22 @@ This action support the following pronto runners.
 
 This action support the following rubocop extentions.
 
-- [rubocop\-i18n](https://github.com/puppetlabs/rubocop-i18n)
-- [rubocop\-md](https://github.com/rubocop-hq/rubocop-md)
-- [rubocop\-minitest](https://github.com/rubocop-hq/rubocop-minitest)
-- [rubocop\-performance](https://github.com/rubocop-hq/rubocop-performance)
-- [rubocop\-rails](https://github.com/rubocop-hq/rubocop-rails)
-- [rubocop\-rake](https://github.com/rubocop-hq/rubocop-rake)
-- [rubocop\-require\_tools](https://github.com/milch/rubocop-require_tools)
-- [rubocop\-rspec](https://github.com/rubocop-hq/rubocop-rspec)
-- [rubocop\-sequel](https://github.com/rubocop-hq/rubocop-sequel)
-- [rubocop\-thread\_safety](https://github.com/covermymeds/rubocop-thread_safety)
+- Rubocop Official Extensions
+  - [rubocop\-performance](https://github.com/rubocop-hq/rubocop-performance)
+  - [rubocop\-rails](https://github.com/rubocop-hq/rubocop-rails)
+  - [rubocop\-rspec](https://github.com/rubocop-hq/rubocop-rspec)
+  - [rubocop\-minitest](https://github.com/rubocop-hq/rubocop-minitest)
+  - [rubocop\-rake](https://github.com/rubocop-hq/rubocop-rake)
+  - [rubocop\-sequel](https://github.com/rubocop-hq/rubocop-sequel)
+  - [rubocop\-thread\_safety](https://github.com/covermymeds/rubocop-thread_safety)
+- Third-party Extensions (introduced in official docs)
+  - [rubocop\-require\_tools](https://github.com/milch/rubocop-require_tools)
+  - [rubocop\-i18n](https://github.com/puppetlabs/rubocop-i18n)
+  - [rubocop\-packaging](https://github.com/utkarsh2102/rubocop-packaging)
+  - [rubocop\-sorbet](https://github.com/Shopify/rubocop-sorbet)
+  - [rubocop\-graphql](https://github.com/DmitryTsepelev/rubocop-graphql)
+- Other Extensions
+  - [rubocop\-md](https://github.com/rubocop-hq/rubocop-md)
 
 pronto-rubocop supports suggestion comments on Github pullrequest. 
 see https://github.com/prontolabs/pronto-rubocop#suggestions
