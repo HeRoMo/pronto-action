@@ -37,3 +37,6 @@ gem 'rubocop-graphql', '~> 0', require: false
 ## Other Extensions
 gem 'rubocop-md', '~> 1', require: false
 # rubocop:enable Bundler/OrderedGems
+
+# Other Extensions
+gem 'prettier'
