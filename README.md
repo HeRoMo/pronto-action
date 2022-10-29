@@ -77,7 +77,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: HeRoMo/pronto-action@v1.38.0
+      - uses: HeRoMo/pronto-action@v1.39.0
 ```
 
 ### For running eslint_npm runner
@@ -103,13 +103,14 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: '14.17.x'
+          node-version-file: '18'
+          cache: 'yarn'
       - name: yarn install
         run: yarn install
       - name: pronto run
-        uses: HeRoMo/pronto-action@v1.38.0
+        uses: HeRoMo/pronto-action@v1.39.0
         with:
           runner: eslint_npm
 ```
@@ -142,7 +143,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: HeRoMo/pronto-action@v1.38.0
+      - uses: HeRoMo/pronto-action@v1.39.0
 ```
 
 ## LICENSE
