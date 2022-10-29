@@ -103,9 +103,10 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: '14.17.x'
+          node-version-file: '18'
+          cache: 'yarn'
       - name: yarn install
         run: yarn install
       - name: pronto run
