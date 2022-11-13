@@ -1,5 +1,5 @@
 # Default values of ARGs in global scope
-ARG NODE_VER=18.12.0
+ARG NODE_VER=18.12.1
 ARG YARN_VER=1.22.19
 ARG RUBY_VER=3.1.2
 
