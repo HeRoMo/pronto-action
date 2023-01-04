@@ -4,10 +4,10 @@ ARG YARN_VER=1.22.19
 ARG RUBY_VER=3.1.3
 
 # https://hub.docker.com/_/node
-FROM node:${NODE_VER}-alpine3.16 as nodejs
+FROM node:${NODE_VER}-alpine3.17 as nodejs
 
 # https://hub.docker.com/_/ruby
-FROM ruby:${RUBY_VER}-alpine3.16
+FROM ruby:${RUBY_VER}-alpine3.17
 ARG NODE_VER # stage local scope
 ARG YARN_VER # stage local scope
 
