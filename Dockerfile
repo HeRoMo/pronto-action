@@ -38,8 +38,6 @@ RUN set -eux; \
     ; \
     bundle install --jobs 20 --retry 5 \
     ; \
-    git config --global --add safe.directory "*" \
-    ; \
     apk del --purge --no-network .ruby-builddeps \
     ; \
     apk add --no-cache \
