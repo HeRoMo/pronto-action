@@ -35,7 +35,6 @@ RUN set -eux; \
         cmake \
         openssl \
         openssl-dev \
-        xz \
     ; \
     bundle install --jobs 20 --retry 5 \
     ; \
