@@ -11,6 +11,8 @@ export FORMATTERS=${INPUT_FORMATTERS:-github_status github_pr}
 
 export PRONTO_PULL_REQUEST_ID="$(jq --raw-output .number "${GITHUB_EVENT_PATH}")"
 export PRONTO_GITHUB_ACCESS_TOKEN="${GITHUB_TOKEN}"
+
+git config --global --add safe.directory ${GITHUB_WORKSPACE}
 COMMAND="bundle exec pronto run ${GITHUB_WORKSPACE}/${PRONTO_TARGET_PATH} -c ${COMMIT} -r ${RUNNER} -f ${FORMATTERS}"
 echo "PRONTO_PULL_REQUEST_ID: ${PRONTO_PULL_REQUEST_ID}"
 echo "COMMAND: ${COMMAND}"

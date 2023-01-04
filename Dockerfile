@@ -42,6 +42,7 @@ RUN set -eux; \
     ; \
     apk add --no-cache \
         jq \
+        git \
     ;
 
 COPY entrypoint.sh entrypoint.sh
