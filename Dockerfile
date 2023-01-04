@@ -1,7 +1,7 @@
 # Default values of ARGs in global scope
 ARG NODE_VER=18.12.1
 ARG YARN_VER=1.22.19
-ARG RUBY_VER=3.2.0
+ARG RUBY_VER=3.1.3
 
 # https://hub.docker.com/_/node
 FROM node:${NODE_VER}-alpine3.17 as nodejs
