@@ -163,7 +163,7 @@ GEM
       rubocop (>= 0.53.0)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
-    rugged (1.5.0.1)
+    rugged (1.5.1)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
