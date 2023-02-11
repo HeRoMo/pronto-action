@@ -27,5 +27,5 @@ inputs:
     default: '.'
 runs:
   using: 'docker'
-  image: docker://ghcr.io/heromo/pronto-action:1.44.0
+  image: docker://ghcr.io/heromo/pronto-action:1.45.0
   entrypoint: '/pronto/entrypoint.sh'
