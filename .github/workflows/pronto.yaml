@@ -13,5 +13,3 @@ jobs:
         with:
           fetch-depth: 0
       - uses: HeRoMo/pronto-action@1.46.0
-        with:
-          github_token: ${{ secrets.WORKFLOW_TOKEN }}
