@@ -1,0 +1,42 @@
+name: build ckeck
+on:
+  pull_request:
+    paths:
+      - Dockerfile
+      - Gemfile
+      - Gemfile.lock
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    timeout-minutes: 60
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Build Image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Dockerfile
+          load: true
+          push: false
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+      - name: Modify action.yaml
+        run: yq '.runs.image = "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest"' -i action.yaml
+      - name: Test Local Action
+        uses: ./
+        with: 
+          runner: rubocop
+          path: ./test/
+          formatters: text
