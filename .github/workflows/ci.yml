@@ -1,10 +1,10 @@
 name: build ckeck
 on:
   pull_request:
-    paths:
-      - Dockerfile
-      - Gemfile
-      - Gemfile.lock
+    # paths:
+    #   - Dockerfile
+    #   - Gemfile
+    #   - Gemfile.lock
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
