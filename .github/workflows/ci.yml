@@ -1,10 +1,11 @@
 name: Build and Test
 on:
   pull_request:
-    # paths:
-    #   - Dockerfile
-    #   - Gemfile
-    #   - Gemfile.lock
+    paths:
+      - Dockerfile
+      - Gemfile
+      - Gemfile.lock
+      - entrypoint.sh
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: heromo/pronto-action
