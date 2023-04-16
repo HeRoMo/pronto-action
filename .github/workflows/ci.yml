@@ -1,4 +1,4 @@
-name: build ckeck
+name: Build and Test
 on:
   pull_request:
     # paths:
@@ -34,9 +34,16 @@ jobs:
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
       - name: Modify action.yaml
         run: yq '.runs.image = "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest"' -i action.yaml
+      - name: Prepare Tests
+        run: |
+          cp -rf ./test ./test-tmp
+          git config --global user.email "test@example.com"
+          git config --global user.name "Tester"
+          git add -f ./test-tmp
+          git commit -m 'for test'
       - name: Test Local Action
         uses: ./
         with: 
           runner: rubocop
-          path: ./test/
+          path: ./test-tmp/
           formatters: text
