@@ -28,7 +28,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Build Image
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           context: .
           file: ./Dockerfile
