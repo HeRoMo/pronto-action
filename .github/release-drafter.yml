@@ -12,6 +12,7 @@ categories:
       - 'bug'
 exclude-labels:
   - 'skip-changelog'
+  - 'github_actions'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&'
 version-resolver:
