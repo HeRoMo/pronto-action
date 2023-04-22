@@ -1,11 +1,14 @@
-name: Publish Docker image
+name: Publish Image
 on:
   push:
     branches:
       - main
-      - develop
-    tags:
-      - '[0-9]+.[0-9]+.[0-9]+'
+    paths:
+      - Dockerfile
+      - Gemfile
+      - Gemfile.lock
+      - entrypoint.sh
+      - .github/workflows/publish-image.yml
 
 env:
   REGISTRY: ghcr.io
@@ -13,29 +16,64 @@ env:
 
 jobs:
   build-and-push-image:
-    name: Push Docker image to GitHub Container Registry
+    name: Push image to GitHub Container Registry
     runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-publish
+      cancel-in-progress: true
     permissions:
       contents: read
+      deployments: write
+      issues: write
       packages: write
+    timeout-minutes: 60
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Log in to the Container registry
+      - name: Login to the container registry
         uses: docker/login-action@v2
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Extract metadata (tags, labels) for Docker
+      - name: Start Deployment
+        uses: bobheadxi/deployments@v1
+        id: deployment
+        with:
+          step: start
+          env: main
+      - name: Extract metadata (tags, labels) of image
         id: meta
         uses: docker/metadata-action@v4
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-      - name: Build and push Docker image
+      - name: Build and Push Image
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      - name: Update Deployment
+        uses: bobheadxi/deployments@v1
+        if: always()
+        with:
+          step: finish
+          env: main
+          status: ${{ job.status }}
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          env_url: https://github.com/HeRoMo/pronto-action/pkgs/container/pronto-action
+      - name: Create Issue on Failure
+        uses: actions/github-script@v6
+        if: failure()
+        with:
+          script: |
+            const create = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "Failed to publish image",
+              body: "Automation has failed!\nMore information can be found at:\n - ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+              assignees: [
+                "${{ github.repository_owner }}"
+              ]
+            })
