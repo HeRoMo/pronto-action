@@ -10,28 +10,30 @@ on:
         required: true
         default: 'v'
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: heromo/pronto-action
+
 jobs:
   release:
     name: Release Images
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-      issues: write
-      packages: write
+    permissions: write-all
+      # contents: write
+      # deployments: write
+      # issues: write
+      # packages: write
     timeout-minutes: 60
 
     steps:
       - name: Setup Docker BuildX
         uses: docker/setup-buildx-action@v2
-
       - name: Login to GHCR
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Retrieve Current Release Version
         run: |
           RELEASE_VERSION="${{ github.event.release.name }}"
@@ -48,18 +50,21 @@ jobs:
             echo "Error: RELEASE_VERSION doesn't look like a semantic version: ${RELEASE_VERSION}"
             exit 2
           fi
+          SEMVER_VERSION=${RELEASE_VERSION#v}
+          SEMVER_MAJOR_VERSION=${SEMVER_VERSION%%.*}
+          SEMVER_MAJOR_VERSION_WITH_PREFIX=v${SEMVER_MAJOR_VERSION}
           {
             echo "RELEASE_VERSION=${RELEASE_VERSION}"
-            echo "SEMVER_VERSION=${RELEASE_VERSION#v}"
-            echo "SEMVER_MAJOR_VERSION=${SEMVER_VERSION%%.*}"
-            echo "SEMVER_MAJOR_VERSION_WITH_PREFIX=v${SEMVER_MAJOR_VERSION}"
+            echo "SEMVER_VERSION=${SEMVER_VERSION}"
+            echo "SEMVER_MAJOR_VERSION=${SEMVER_MAJOR_VERSION}"
+            echo "SEMVER_MAJOR_VERSION_WITH_PREFIX=${SEMVER_MAJOR_VERSION_WITH_PREFIX}"
           } >> "${GITHUB_ENV}"
       - name: Start Deployment
         uses: bobheadxi/deployments@v1
         id: deployment
         with:
           step: start
-          env: relese
+          env: release
 
       # We don't rebuild the image to avoid that the latest tag and the release tags don't point to what the release tag is pointing to.
       # Instead, we pull the latest image and tag it.
@@ -68,14 +73,12 @@ jobs:
         with:
           src: ghcr.io/heromo/pronto-action:latest
           dst: |
-            ghcr.io/heromo/pronto-action:v1
-            ghcr.io/heromo/pronto-action:${{ env.RELEASE_VERSION }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.SEMVER_MAJOR_VERSION_WITH_PREFIX }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.RELEASE_VERSION }}
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
-          # Full git history is needed to get a proper list of commits and tags
-          fetch-depth: 0
-
+          fetch-depth: 0 # Full git history is needed to get a proper list of commits and tags
       # We use ^{} to recursively deference the tag to get the commit the tag is pointing at.
       # Then, we use that reference to create new tags, so that the new tags point to the commit
       # the original tag was pointing to, and not to the original tag.
@@ -99,7 +102,7 @@ jobs:
         if: failure()
         uses: actions/github-script@v6
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const create = await github.rest.issues.create({
               owner: context.repo.owner,
