@@ -1,0 +1,25 @@
+name: Release Drafter
+# see https://github.com/release-drafter/release-drafter#usage
+
+on:
+  push:
+    branches:
+      - main
+  pull_request: # for autolabeler
+    types: [opened, reopened, synchronize]
+  # pull_request_target: # for autolabeler to support PRs from forks
+  #   types: [opened, reopened, synchronize]
+
+permissions:
+  contents: read
+
+jobs:
+  update_release_draft:
+    permissions:
+      contents: write # to create a github release
+      pull-requests: write # for autolabeler
+    runs-on: ubuntu-latest
+    steps:
+      - uses: release-drafter/release-drafter@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
