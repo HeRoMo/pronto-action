@@ -2,7 +2,6 @@ version: 2
 updates:
 - package-ecosystem: bundler
   directory: "/"
-  target-branch: develop
   schedule:
     interval: weekly
     day: saturday
@@ -10,7 +9,7 @@ updates:
     timezone: "Asia/Tokyo"
   assignees:
     - HeRoMo
-  open-pull-requests-limit: 10
+  open-pull-requests-limit: 20
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
@@ -29,4 +28,3 @@ updates:
     timezone: "Asia/Tokyo"
   assignees:
     - HeRoMo
-  open-pull-requests-limit: 20
