@@ -3,6 +3,12 @@ on:
   push:
     branches:
       - main
+    paths:
+      - Dockerfile
+      - Gemfile
+      - Gemfile.lock
+      - entrypoint.sh
+      - .github/workflows/publish-image.yml
 
 env:
   REGISTRY: ghcr.io
