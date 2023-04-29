@@ -26,9 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      deployments: write
       issues: write
-      packages: write
     outputs:
       exist-release-pr: ${{ steps.release-pr.outputs.result }}
       release-pr: ${{ steps.release-pr.outputs.pr }}
@@ -72,6 +70,21 @@ jobs:
             const pull = pulls.data[0];
             core.setOutput('pr', pull);
             return !!pull
+      - name: Create Issue on Failure
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const releasePull = ${{ needs.prepare.outputs.release-pr }};
+            const create = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "Failed to prepare create/update release pr",
+              body: `Automation has failed! Failed to create/update release pr for '${{ steps.versions.outputs.next-version }}'\nMore information can be found at:\n - ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`,
+              assignees: [
+                '${{ github.repository_owner }}'
+              ]
+            })
 
   create-release-pr:
     name: Create Relese Pull Request
@@ -80,6 +93,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      issues: write
       pull-requests: write
     timeout-minutes: 60
     steps:
@@ -126,6 +140,21 @@ jobs:
               issue_number: pull.number,
               labels: ['release'],
             });
+      - name: Create Issue on Failure
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const releasePull = ${{ needs.prepare.outputs.release-pr }};
+            const create = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "Failed to create release pr",
+              body: `Automation has failed! Failed to create release pr for '${{ needs.prepare.outputs.next-version }}'\nMore information can be found at:\n - ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`,
+              assignees: [
+                '${{ github.repository_owner }}'
+              ]
+            })
 
   update-release-pr:
     name: Update Relese Pull Request
@@ -134,6 +163,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      issues: write
       pull-requests: write
     timeout-minutes: 60
     steps:
@@ -150,4 +180,19 @@ jobs:
               body: releseNote.data.body
             });
             core.setOutput('updated-pr', pull);
+      - name: Create Issue on Failure
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const releasePull = ${{ needs.prepare.outputs.release-pr }};
+            const create = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "Failed to update release pr",
+              body: `Automation has failed! Failed to update release pr '${releasePull.title}'\nMore information can be found at:\n - ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`,
+              assignees: [
+                '${{ github.repository_owner }}'
+              ]
+            })
 
