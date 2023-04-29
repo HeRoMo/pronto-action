@@ -1,0 +1,20 @@
+# see https://github.com/release-drafter/release-drafter#configuration
+changelog:
+  categories:
+    - title: 'Update langs'
+      labels:
+        - 'docker'
+    - title: 'Update gems'
+      labels:
+        - 'ruby'
+    - title: 'Bug Fixes'
+      labels:
+        - 'fix'
+        - 'bug'
+    - title: Other
+      labels:
+        - '*'
+  exclude:
+    labels:
+      - 'skip-changelog'
+      - 'github_actions'
