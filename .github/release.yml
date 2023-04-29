@@ -1,4 +1,4 @@
-# see https://github.com/release-drafter/release-drafter#configuration
+# see https://docs.github.com/ja/repositories/releasing-projects-on-github/automatically-generated-release-notes
 changelog:
   categories:
     - title: 'Update langs'
@@ -11,9 +11,6 @@ changelog:
       labels:
         - 'fix'
         - 'bug'
-    - title: Other
-      labels:
-        - '*'
   exclude:
     labels:
       - 'skip-changelog'
