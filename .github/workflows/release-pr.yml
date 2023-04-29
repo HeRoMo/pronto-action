@@ -1,0 +1,121 @@
+name: Create Realse PR
+
+on:
+  push:
+    branches:
+      - main
+  pull_request: # for test TODO: delete
+    types: [opened, reopened, synchronize]
+  # workflow_dispatch:
+  #   inputs:
+  #     level:
+  #       default: "minor"
+  #       required: false
+  #       type: choice
+  #       options:
+  #         - "major"
+  #         - "minor"
+  #         - "patch"
+  #       description: "bump to [major|minor|patch]"
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: heromo/pronto-action
+
+jobs:
+  prepare:
+    name: Release Images
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      deployments: write
+      issues: write
+      packages: write
+    outputs:
+      exist-release-pr: ${{ steps.release-pr.outputs.result }}
+      release-pr: ${{ steps.release-pr.outputs.pr }}
+      release-note: ${{ steps.release-note.outputs.release-note }}
+      latest-version: ${{ steps.versions.outputs.latest-version }}
+      next-version: ${{ steps.versions.outputs.next-version }}
+    timeout-minutes: 60
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+      - name: Fetch Latest & Next Release Version
+        uses: actions/github-script@v6
+        id: versions
+        with:
+          script: |
+            const script = require('./.github/wf-scripts/latest-version.js');
+            return await script({github, context, core});
+      - name: Generate Release Note
+        uses: actions/github-script@v6
+        id: release-note
+        with:
+          script: |
+            const script = require('./.github/wf-scripts/release-note.js');
+            const latestVersion = '${{ steps.versions.outputs.latest-version }}';
+            const nextVersion = '${{ steps.versions.outputs.next-version }}';
+            await script({github, context, core, latestVersion, nextVersion});
+      - name: Fetch Release PR
+        uses: actions/github-script@v6
+        id: release-pr
+        with:
+          script: |
+            const nextVersion = '${{ steps.versions.outputs.next-version }}';
+            const pulls = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              head: `heromo:release-${ nextVersion }`,
+              // head: `heromo:change-workflows`,
+            });
+            const pull = pulls.data[0]
+            core.setOutput('pr', pull)
+            return !!pull
+
+  create-release-pr:
+    name: Create Relese Pull Request
+    needs: prepare
+    if: needs.prepare.outputs.exist-release-pr == 'false'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    timeout-minutes: 60
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+      - name: Git config
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b release-${{ needs.prepare.outputs.next-version }}
+      - name: Modify action.yaml
+        run: yq '.runs.image = "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.prepare.outputs.next-version }}"' -i action.yaml
+      - name: Commit and Push
+        run: |
+          git add action.yaml
+          git commit -m 'bumpup image version'
+          git push origin release-${{ needs.prepare.outputs.next-version }}
+      - name: Create PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const pull = await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head ${{ needs.prepare.outputs.next-version }},
+              base: main,
+            })
+            core.setOutput('created-pr', pull);
+
+  update-release-pr:
+    name: Update Relese Pull Request
+    needs: prepare
+    if: needs.prepare.outputs.exist-release-pr == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    timeout-minutes: 60
+    steps:
+      - run: echo '${{needs.prepare.outputs.exist-release-pr}}'

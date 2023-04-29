@@ -5,10 +5,10 @@ on:
   push:
     branches:
       - main
-  pull_request: # for autolabeler
-    types: [opened, reopened, synchronize]
-  # pull_request_target: # for autolabeler to support PRs from forks
+  # pull_request: # for autolabeler
   #   types: [opened, reopened, synchronize]
+  # # pull_request_target: # for autolabeler to support PRs from forks
+  # #   types: [opened, reopened, synchronize]
 
 permissions:
   contents: read
