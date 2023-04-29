@@ -22,7 +22,7 @@ env:
 
 jobs:
   prepare:
-    name: Release Images
+    name: Prepare Versions and Release Note
     runs-on: ubuntu-latest
     permissions:
       contents: write
