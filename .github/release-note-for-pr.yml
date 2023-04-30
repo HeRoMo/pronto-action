@@ -11,6 +11,9 @@ changelog:
       labels:
         - 'fix'
         - 'bug'
+    - title: Other
+      labels:
+        - '*'
   exclude:
     labels:
       - 'skip-changelog'
