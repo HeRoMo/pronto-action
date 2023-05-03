@@ -4,12 +4,10 @@ on:
   pull_request:
     types:
       - closed
-    branches:
-      - 'release/**'
 
 jobs:
   release:
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/') == true
     name: Release PR Merged
     runs-on: ubuntu-latest
     permissions:
