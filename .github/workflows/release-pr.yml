@@ -1,4 +1,4 @@
-name: Create Realse PR
+name: Create/Update Realse PR
 
 on:
   push:
@@ -27,6 +27,9 @@ jobs:
     permissions:
       contents: write
       issues: write
+    concurrency:
+      group: ${{ github.workflow }}
+      cancel-in-progress: true
     outputs:
       exist-release-pr: ${{ steps.release-pr.outputs.result }}
       release-pr: ${{ steps.release-pr.outputs.pr }}
@@ -94,6 +97,9 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
+    concurrency:
+      group: ${{ github.workflow }}
+      cancel-in-progress: true
     timeout-minutes: 60
     steps:
       - name: Check out
@@ -105,10 +111,11 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b release/${{ needs.prepare.outputs.next-version }}
-      - name: Modify action.yaml
+      - name: Modify files
         run: |
           yq '.runs.image = "docker://${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.prepare.outputs.next-version }}"' -i action.yaml
-          git add action.yaml
+          sed -i -r 's/pronto-action@v[0-9]+\.[0-9]+\.[0-9]+/pronto-action@${{ needs.prepare.outputs.next-version }}/' README.md
+          git add action.yaml README.md
       - name: check diff
         shell: bash
         id: changes
@@ -171,6 +178,9 @@ jobs:
       contents: read
       issues: write
       pull-requests: write
+    concurrency:
+      group: ${{ github.workflow }}
+      cancel-in-progress: true
     timeout-minutes: 60
     steps:
       - name: Update PR
