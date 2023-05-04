@@ -37,3 +37,6 @@ gem 'rubocop-graphql', '~> 1', require: false
 ## Other Extensions
 gem 'rubocop-md', '~> 1', require: false
 # rubocop:enable Bundler/OrderedGems
+
+# Sorbet https://sorbet.org/
+gem 'sorbet', '> 0', require: false

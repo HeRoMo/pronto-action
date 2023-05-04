@@ -215,6 +215,7 @@ DEPENDENCIES
   rubocop-sequel (~> 0)
   rubocop-sorbet (~> 0)
   rubocop-thread_safety (~> 0)
+  sorbet (> 0)
   unparser (> 0)
 
 BUNDLED WITH
