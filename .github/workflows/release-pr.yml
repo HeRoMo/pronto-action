@@ -120,7 +120,7 @@ jobs:
         shell: bash
         id: changes
         run: |
-          echo "::set-output name=count::$(git diff --staged --name-only . |wc -l)"
+          echo "count=$(git diff --staged --name-only . |wc -l)" >> $GITHUB_OUTPUT
       - name: Commit and Push if changed
         if: steps.changes.outputs.count > 0
         run: |
