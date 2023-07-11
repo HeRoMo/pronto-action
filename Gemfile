@@ -19,6 +19,7 @@ gem 'pronto-sorbet', require: false
 # see https://docs.rubocop.org/rubocop/extensions.html
 ## Rubocop Official Extentions
 # rubocop:disable Bundler/OrderedGems
+gem 'rubocop', '~> 1', require: false
 gem 'rubocop-performance', '~> 1', require: false
 gem 'rubocop-rails', '~> 2', require: false
 gem 'rubocop-rspec', '~> 2', require: false
