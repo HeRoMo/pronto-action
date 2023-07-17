@@ -22,7 +22,7 @@ GEM
       erubi (~> 1.4)
       parser (>= 2.4)
       smart_properties
-    brakeman (5.4.1)
+    brakeman (6.0.0)
     builder (3.2.4)
     code_analyzer (0.5.5)
       sexp_processor
@@ -200,6 +200,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  brakeman (~> 6)
   pronto (~> 0.11.0)
   pronto-brakeman (~> 0.11.0)
   pronto-erb_lint
