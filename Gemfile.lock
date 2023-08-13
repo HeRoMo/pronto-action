@@ -165,7 +165,7 @@ GEM
       rubocop-factory_bot (~> 2.22)
     rubocop-sequel (0.3.4)
       rubocop (~> 1.0)
-    rubocop-sorbet (0.7.1)
+    rubocop-sorbet (0.7.2)
       rubocop (>= 0.90.0)
     rubocop-thread_safety (0.5.1)
       rubocop (>= 0.90.0)
