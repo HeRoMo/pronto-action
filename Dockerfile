@@ -1,13 +1,13 @@
 # Default values of ARGs in global scope
-ARG NODE_IMAGE=node:18.15.0-alpine3.17
-ARG NODE_VERSION=18.15.0
+ARG NODE_IMAGE=node:18.17.1-alpine3.18
+ARG NODE_VERSION=18.17.1
 ARG YARN_VERSION=1.22.19
 
 # https://hub.docker.com/_/node
 FROM ${NODE_IMAGE} as nodejs
 
 # https://hub.docker.com/_/ruby
-FROM ruby:3.2.2-alpine3.17
+FROM ruby:3.2.2-alpine3.18
 ARG NODE_VERSION # stage local scope
 ARG YARN_VERSION # stage local scope
 # Install Node.js
