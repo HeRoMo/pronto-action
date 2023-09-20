@@ -89,7 +89,7 @@ jobs:
             })
 
   create-release-pr:
-    name: Create Relese Pull Request
+    name: Create Release Pull Request
     needs: prepare
     if: needs.prepare.outputs.exist-release-pr == 'false'
     runs-on: ubuntu-latest
@@ -132,14 +132,14 @@ jobs:
         id: create-pr
         with:
           script: |
-            const releseNote = ${{ needs.prepare.outputs.release-note }};
+            const releaseNote = ${{ needs.prepare.outputs.release-note }};
             const { data: pull } = await github.rest.pulls.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
               head: 'release/${{ needs.prepare.outputs.next-version }}',
               base: 'main',
               title: 'Release ${{ needs.prepare.outputs.next-version }}',
-              body: releseNote.data.body
+              body: releaseNote.data.body
             });
             core.setOutput('created-pr', pull);
             github.rest.issues.addAssignees({
@@ -170,7 +170,7 @@ jobs:
             })
 
   update-release-pr:
-    name: Update Relese Pull Request
+    name: Update Release Pull Request
     needs: prepare
     if: needs.prepare.outputs.exist-release-pr == 'true'
     runs-on: ubuntu-latest
@@ -188,12 +188,12 @@ jobs:
         with:
           script: |
             const releasePull = ${{ needs.prepare.outputs.release-pr }};
-            const releseNote = ${{ needs.prepare.outputs.release-note }};
+            const releaseNote = ${{ needs.prepare.outputs.release-note }};
             const { data: pull } = await github.rest.pulls.update({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: releasePull.number,
-              body: releseNote.data.body
+              body: releaseNote.data.body
             });
             core.setOutput('updated-pr', pull);
       - name: Create Issue on Failure
