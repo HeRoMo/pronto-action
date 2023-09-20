@@ -1,4 +1,4 @@
-name: Create/Update Realse PR
+name: Create/Update Release PR
 
 on:
   push:
@@ -138,7 +138,7 @@ jobs:
               repo: context.repo.repo,
               head: 'release/${{ needs.prepare.outputs.next-version }}',
               base: 'main',
-              title: 'Realse ${{ needs.prepare.outputs.next-version }}',
+              title: 'Release ${{ needs.prepare.outputs.next-version }}',
               body: releseNote.data.body
             });
             core.setOutput('created-pr', pull);
