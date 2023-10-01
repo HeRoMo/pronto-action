@@ -146,7 +146,7 @@ GEM
       rubocop (~> 1.0)
     rubocop-md (1.2.0)
       rubocop (>= 1.0)
-    rubocop-minitest (0.31.1)
+    rubocop-minitest (0.32.2)
       rubocop (>= 1.39, < 2.0)
     rubocop-packaging (0.5.2)
       rubocop (>= 1.33, < 2.0)
