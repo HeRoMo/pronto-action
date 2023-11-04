@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 # Pronto and Extentions
-gem 'pronto', '~> 0.11.0'
+gem 'pronto', '~> 0.11.2'
 gem 'pronto-brakeman', '~> 0.11.0', require: false
 gem 'brakeman', '~> 6', require: false
 gem 'pronto-erb_lint', require: false
