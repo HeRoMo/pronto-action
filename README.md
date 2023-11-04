@@ -74,7 +74,7 @@ jobs:
       pull-requests: write
       statuses: write 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: HeRoMo/pronto-action@v1.57.0
@@ -99,7 +99,7 @@ jobs:
       pull-requests: write
       statuses: write 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Setup Node.js
@@ -140,7 +140,7 @@ jobs:
       pull-requests: write
       statuses: write 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: HeRoMo/pronto-action@v1.57.0
