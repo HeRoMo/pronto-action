@@ -7,7 +7,7 @@ ARG YARN_VERSION=1.22.19
 FROM ${NODE_IMAGE} as nodejs
 
 # https://hub.docker.com/_/ruby
-FROM ruby:3.2.2-alpine3.19
+FROM ruby:3.3.0-alpine3.19
 ARG NODE_VERSION # stage local scope
 ARG YARN_VERSION # stage local scope
 # Install Node.js
