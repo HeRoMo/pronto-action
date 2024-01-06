@@ -77,7 +77,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: HeRoMo/pronto-action@v1.60.0
+      - uses: HeRoMo/pronto-action@v1.61.0
 ```
 
 ### For running eslint_npm runner
@@ -110,7 +110,7 @@ jobs:
       - name: yarn install
         run: yarn install
       - name: pronto run
-        uses: HeRoMo/pronto-action@v1.60.0
+        uses: HeRoMo/pronto-action@v1.61.0
         with:
           runner: eslint_npm
 ```
@@ -143,7 +143,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: HeRoMo/pronto-action@v1.60.0
+      - uses: HeRoMo/pronto-action@v1.61.0
 ```
 
 ## LICENSE
