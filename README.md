@@ -9,6 +9,7 @@ This action support the following pronto runners.
 - [pronto\-brakeman](https://github.com/prontolabs/pronto-brakeman)
 - [pronto\-eslint\_npm](https://github.com/doits/pronto-eslint_npm)
 - [pronto\-rails\_best\_practices](https://github.com/prontolabs/pronto-rails_best_practices)
+- [pronto\-reek](https://github.com/prontolabs/pronto-reek)
 - [pronto\-rubocop](https://github.com/prontolabs/pronto-rubocop)
 - [pronto\-scss](https://github.com/prontolabs/pronto-scss)
 - [pronto\-slim\_lint](https://github.com/ibrahima/pronto-slim_lint)
