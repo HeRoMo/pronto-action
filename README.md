@@ -60,7 +60,7 @@ see [Pronto usage](https://github.com/prontolabs/pronto#usage).
 
 ### For running rubocop runner
 
-The following yaml is a simplest workflow difinition of using pronto-action.
+The following yaml is a simplest workflow definition of using pronto-action.
 
 ```yaml
 name: Pronto
