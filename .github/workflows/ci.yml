@@ -11,7 +11,7 @@ on:
       - .github/workflows/ci.yml
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: heromo/pronto-action
+  IMAGE_NAME: spaetzel/pronto-action
 
 jobs:
   test:

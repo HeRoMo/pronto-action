@@ -47,10 +47,10 @@ jobs:
       - name: Retag and Push Images
         uses: akhilerm/tag-push-action@v2.1.0
         with:
-          src: ghcr.io/heromo/pronto-action:latest
+          src: ghcr.io/spaetzel/pronto-action:latest
           dst: |
-            ghcr.io/heromo/pronto-action:${{ steps.release-version.outputs.major }}
-            ghcr.io/heromo/pronto-action:${{ steps.release-version.outputs.full }}
+            ghcr.io/spaetzel/pronto-action:${{ steps.release-version.outputs.major }}
+            ghcr.io/spaetzel/pronto-action:${{ steps.release-version.outputs.full }}
       - name: Publish Release
         uses: actions/github-script@v7
         with:
@@ -94,7 +94,7 @@ jobs:
           status: ${{ job.status }}
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
           env: ${{ steps.deployment.outputs.env }}
-          env_url: https://github.com/HeRoMo/pronto-action/releases/tag/${{ env.RELEASE_VERSION }}
+          env_url: https://github.com/spaetzel/pronto-action/releases/tag/${{ env.RELEASE_VERSION }}
 
       - name: Create Issue on Failure
         if: failure()

@@ -18,7 +18,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: heromo/pronto-action
+  IMAGE_NAME: spaetzel/pronto-action
 
 jobs:
   prepare:
@@ -68,7 +68,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               state: 'open',
-              head: `heromo:release/${ nextVersion }`,
+              head: `spaetzel:release/${ nextVersion }`,
             });
             const pull = pulls.data[0];
             core.setOutput('pr', pull);

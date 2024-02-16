@@ -8,7 +8,7 @@ updates:
     time: "05:00"
     timezone: "Asia/Tokyo"
   assignees:
-    - HeRoMo
+    - spaetzel
   open-pull-requests-limit: 20
 - package-ecosystem: github-actions
   directory: "/"
@@ -18,7 +18,7 @@ updates:
     time: "05:00"
     timezone: "Asia/Tokyo"
   assignees:
-    - HeRoMo
+    - spaetzel
 - package-ecosystem: docker
   directory: "/"
   schedule:
@@ -27,4 +27,4 @@ updates:
     time: "05:00"
     timezone: "Asia/Tokyo"
   assignees:
-    - HeRoMo
+    - spaetzel

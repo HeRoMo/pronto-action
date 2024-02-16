@@ -1,6 +1,6 @@
 name: 'Pronto Action'
 description: 'Github action of Pronto'
-author: 'HeRoMo'
+author: 'spaetzel'
 branding:
   icon: 'code'
   color: 'blue'
@@ -27,5 +27,5 @@ inputs:
     default: '.'
 runs:
   using: 'docker'
-  image: docker://ghcr.io/heromo/pronto-action:v1.60.0
+  image: docker://ghcr.io/spaetzel/pronto-action:v1.60.0
   entrypoint: '/pronto/entrypoint.sh'
