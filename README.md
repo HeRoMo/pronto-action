@@ -116,7 +116,7 @@ jobs:
           runner: eslint_npm
 ```
 
-If does not work successfully, configure elint_npm with  *.pronto_eslint_npm.yml* file. see [Configuration of ESLintNPM](https://github.com/doits/pronto-eslint_npm#configuration-of-eslintnpm)
+If does not work successfully, configure elint_npm with  *.pronto_eslint_npm.yml* file. see [Configuration of ESLintNPM](https://github.com/ngudbhav/pronto-npm-eslint#configuration-of-eslintnpm)
 
 ## Required `permissions` in GitHub workflow
 
