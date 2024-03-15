@@ -45,7 +45,7 @@ jobs:
           step: start
           env: release
       - name: Retag and Push Images
-        uses: akhilerm/tag-push-action@v2.1.0
+        uses: akhilerm/tag-push-action@v2.2.0
         with:
           src: ghcr.io/heromo/pronto-action:latest
           dst: |
