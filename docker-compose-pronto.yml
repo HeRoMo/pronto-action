@@ -1,4 +1,3 @@
-version: '3'
 services:
   pronto:
     image: ghcr.io/heromo/pronto-action:1.50.0
