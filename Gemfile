@@ -43,3 +43,7 @@ gem 'rubocop-md', '~> 1', require: false
 
 # Sorbet https://sorbet.org/
 gem 'sorbet', '> 0', require: false
+
+# standardrb https://github.com/standardrb/standard
+gem 'standard', '~> 1', require: false
+gem 'standard-rails', '~> 1', require: false
