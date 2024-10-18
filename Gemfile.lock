@@ -191,7 +191,7 @@ GEM
       rubocop (>= 1.50, < 2)
     rubocop-i18n (3.0.0)
       rubocop (~> 1.0)
-    rubocop-md (1.2.3)
+    rubocop-md (1.2.4)
       rubocop (>= 1.45)
     rubocop-minitest (0.36.0)
       rubocop (>= 1.61, < 2.0)
