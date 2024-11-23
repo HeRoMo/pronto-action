@@ -214,7 +214,7 @@ GEM
       rubocop (~> 1.61)
     rubocop-sequel (0.3.7)
       rubocop (~> 1.0)
-    rubocop-sorbet (0.8.6)
+    rubocop-sorbet (0.8.7)
       rubocop (>= 1)
     rubocop-thread_safety (0.6.0)
       rubocop (>= 1.48.1)
