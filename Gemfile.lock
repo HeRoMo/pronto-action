@@ -213,7 +213,7 @@ GEM
       rubocop (>= 0.49.1)
     rubocop-rspec (3.3.0)
       rubocop (~> 1.61)
-    rubocop-sequel (0.3.7)
+    rubocop-sequel (0.3.8)
       rubocop (~> 1.0)
     rubocop-sorbet (0.8.7)
       rubocop (>= 1)
