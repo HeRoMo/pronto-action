@@ -38,7 +38,7 @@ gem 'rubocop-sorbet', '~> 0', require: false
 gem 'unparser', '> 0', require: false # for Sorbet/SignatureBuildOrder cop
 gem 'rubocop-graphql', '~> 1', require: false
 ## Other Extensions
-gem 'rubocop-md', '~> 1', require: false
+gem 'rubocop-md', '~> 2', require: false
 # rubocop:enable Bundler/OrderedGems
 
 # Sorbet https://sorbet.org/
