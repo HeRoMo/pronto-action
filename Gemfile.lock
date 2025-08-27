@@ -200,7 +200,7 @@ GEM
     rubocop-i18n (3.2.3)
       lint_roller (~> 1.1)
       rubocop (>= 1.72.1)
-    rubocop-md (2.0.1)
+    rubocop-md (2.0.2)
       lint_roller (~> 1.1)
       rubocop (>= 1.72.1)
     rubocop-minitest (0.38.1)
