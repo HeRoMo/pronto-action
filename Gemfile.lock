@@ -266,10 +266,10 @@ GEM
     unicode-display_width (3.2.0)
       unicode-emoji (~> 4.1)
     unicode-emoji (4.1.0)
-    unparser (0.8.0)
+    unparser (0.8.1)
       diff-lcs (~> 1.6)
       parser (>= 3.3.0)
-      prism (>= 1.4)
+      prism (>= 1.5.1)
     uri (1.1.1)
     zeitwerk (2.6.16)
 
