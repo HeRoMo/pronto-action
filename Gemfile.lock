@@ -32,7 +32,7 @@ GEM
       parser (>= 2.4)
       smart_properties
     bigdecimal (4.0.1)
-    brakeman (7.1.2)
+    brakeman (8.0.1)
       racc
     builder (3.3.0)
     code_analyzer (0.5.5)
@@ -281,7 +281,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  brakeman (~> 7)
+  brakeman (~> 8)
   pronto (~> 0.11.5)
   pronto-brakeman (~> 0.11.0)
   pronto-erb_lint
