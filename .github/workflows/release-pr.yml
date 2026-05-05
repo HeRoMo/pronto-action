@@ -29,7 +29,7 @@ jobs:
       issues: write
     concurrency:
       group: ${{ github.workflow }}
-      cancel-in-progress: true
+      cancel-in-progress: false
     outputs:
       exist-release-pr: ${{ steps.release-pr.outputs.result }}
       release-pr: ${{ steps.release-pr.outputs.pr }}
@@ -99,7 +99,7 @@ jobs:
       pull-requests: write
     concurrency:
       group: ${{ github.workflow }}
-      cancel-in-progress: true
+      cancel-in-progress: false
     timeout-minutes: 60
     steps:
       - name: Check out
@@ -124,7 +124,7 @@ jobs:
       - name: Commit and Push if changed
         if: steps.changes.outputs.count > 0
         run: |
-          git commit -m 'bumpup image version'
+          git commit -m 'bump up image version'
           git push origin release/${{ needs.prepare.outputs.next-version }}
       - name: Create PR
         if: steps.changes.outputs.count > 0
@@ -180,7 +180,7 @@ jobs:
       pull-requests: write
     concurrency:
       group: ${{ github.workflow }}
-      cancel-in-progress: true
+      cancel-in-progress: false
     timeout-minutes: 60
     steps:
       - name: Update PR
