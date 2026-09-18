@@ -119,7 +119,7 @@ GEM
       faraday (>= 1, < 3)
       sawyer (~> 0.9)
     ostruct (0.6.3)
-    parallel (2.1.0)
+    parallel (2.2.0)
     parser (3.3.12.0)
       ast (~> 2.4.1)
       racc
@@ -241,9 +241,9 @@ GEM
     rubocop-sorbet (0.14.0)
       lint_roller
       rubocop (>= 1.75.2)
-    rubocop-thread_safety (0.7.3)
+    rubocop-thread_safety (0.8.0)
       lint_roller (~> 1.1)
-      rubocop (~> 1.72, >= 1.72.1)
+      rubocop (~> 1.89)
       rubocop-ast (>= 1.44.0, < 2.0)
     ruby-progressbar (1.13.0)
     rugged (1.9.0)
